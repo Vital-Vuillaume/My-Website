@@ -1,0 +1,192 @@
+* {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+
+}
+
+body {
+
+  justify-content: center;
+  align-items: center;
+  background-color: #262626;
+  min-height: 100vh;
+
+}
+
+.navigation {
+
+  position: absolute;
+  width: 100%;
+  height: 70px;
+  background-color: white;
+  display: flex;
+  border-radius: 10px 10px 0px 0px;
+  bottom: 2.1px;
+  justify-content: center;
+
+}
+
+.navigation ul {
+
+  display: flex;
+  width: 350px;
+
+}
+
+.navigation ul li {
+
+  z-index: 1;
+
+}
+
+.navigation ul li { 
+
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+
+}
+
+.navigation ul li .icon { 
+
+  position: relative;
+  display: block;
+  line-height: 75px;
+  font-size: 1.5em;
+  text-align: center;
+  transition: 0.5s;
+  color: #262626;
+
+}
+
+.navigation ul li.active .icon { 
+
+  transform: translateY(-35px);
+
+}
+
+.indicator {
+
+  position: absolute;
+  top: -50%;
+  width: 60px;
+  height: 60px;
+  background-color: white;
+  border-radius: 50%;
+  border: 6px solid #262626;
+  left: 20px;
+
+}
+
+.indicator::before {
+
+  content: '';
+  position: absolute;
+  top: 60%;
+  left: -20px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-top-right-radius: 20px;
+  box-shadow: 0px -10px 0 0 #262626;
+
+}
+
+.indicator::after {
+
+  content: '';
+  position: absolute;
+  top: 60%;
+  right: -20px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border-top-left-radius: 20px;
+  box-shadow: 0px -10px 0 0 #262626;
+
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+
+  transform: translateX(calc(70px *  0.04));
+
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+
+  transform: translateX(calc(70px * 1.56));
+
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+
+  transform: translateX(calc(70px * 3.1));
+
+}
+
+/*dark mode*/
+
+body.dark {
+
+  background-color: white !important;
+
+}
+
+body.dark .navigation {
+
+  background-color: #262626;
+
+}
+
+body.dark .navigation ul li .icon {
+
+  color: white;
+
+}
+
+body.dark .indicator {
+
+  background-color: #262626;
+  border: 6px solid white;
+
+}  
+
+body.dark .indicator::after {
+
+  box-shadow: 0px -10px 0 0 white;
+
+}
+
+body.dark .indicator::before {
+
+  box-shadow: 0px -10px 0 0 white;
+  
+  }
+
+body.dark .btn-toggle {
+
+  background-color: #262626;
+  color: white;
+
+}
+
+.btn-toggle {
+  
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: white;
+  color: #262626;
+  display: flex;
+  justify-content: center;
+  align-items: center;    
+  cursor: pointer;
+
+}
