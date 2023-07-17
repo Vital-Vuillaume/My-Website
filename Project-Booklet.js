@@ -32,37 +32,9 @@ window.addEventListener('load', function() {
   showSection(section1);
 });
 
-//theme claire
+const btn = document.querySelector(".btn");
+const nav = document.querySelector(".nav");
 
-const btnToggle = document.querySelector('.btn-toggle');
-
-btnToggle.addEventListener('click', () => {
-
-    const body = document.body;
-
-    if(body.classList.contains('dark')){
-
-        body.classList.add('light')
-        body.classList.remove('dark')
-        btnToggle.innerHTML = "Go Dark"
-
-    } else if(body.classList.contains('light')){
-
-        body.classList.add('dark')
-        body.classList.remove('light')
-        btnToggle.innerHTML = "Go Light"
-
-    }
-
-})
-
-//animation navbar
-
-const list = document.querySelectorAll('.list');
-function activeLink(){
-  list.forEach((item) =>
-  item.classList.remove('active'));
-  this.classList.add('active');
-}
-list.forEach((item) =>
-item.addEventListener('click',activeLink));
+btn.onclick = function ajouterClassNav() {
+   nav.classList.toggle("active"); 
+};

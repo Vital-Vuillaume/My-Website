@@ -9,50 +9,37 @@
     <title>Vital-site</title>
   </head>
 
-  <body class="light">
-    <div id="content">
-      <div id="section1" class="section1">
-        <p>Accueil</p>
-      </div>
+  <body>
+    <div id="section1" class="section1">
+      <p class="titre">Accueil</p>
+    </div>
 
-      <div id="section2" class="section2">
-        <p>Mes projets</p>
-      </div>
+    <div id="section2" class="section2">
+      <p class="titre">Mes projets</p>
+    </div>
 
-      <div id="section3" class="section3">
-        <p>Paramètre</p>
-        <div class="btn-toggle">Go Nuit</div>
-      </div>
+    <div id="section3" class="section3">
+      <p class="titre">Paramètre</p>
     </div>
     
-    <div class="navigation">
-      <ul>
-        <li class="list active">
-          <div id="btn1">
-            <span class="icon">
-              <ion-icon name="home-outline"></ion-icon>
-            </span>
-          </div>
-        </li>
-        <li class="list">
-          <div id="btn2">
-            <span class="icon">
-              <ion-icon name="search-outline"></ion-icon>
-            </span>
-          </div>
-        </li>
-        <li class="list">
-          <div id="btn3">
-            <span class="icon">
-              <ion-icon name="settings-outline"></ion-icon>
-            </span>
-          </div>
-        </li>
-        <div class="indicator"></div>  
-      </ul>
-    </div>
+    <div class="nav">
+      <div class="btn"></div>
+      <div class="ligne"></div>
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+      <li id="btn1" class="list">
+          <img class="img" src="accueil.png" alt="Accueil">
+          <p class="txt">Accueil</p>
+      </li>
+
+      <li id="btn2" class="list">
+          <img class="img" src="recherche.png" alt="Recherche">
+          <p class="txt">Recherche</p>
+      </li>
+
+      <li id="btn3" class="list">
+        <img class="img" src="paramètres.png" alt="Paramètre">
+        <p class="txt">Paramètres</p>
+      </li>
+    </div>
   </body>
 </html>
