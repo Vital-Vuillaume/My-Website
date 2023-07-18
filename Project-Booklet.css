@@ -11,10 +11,12 @@
 
 body {
 
-  background-color: #262626;
+  background-color: rgb(220, 218, 218);
   min-height: 100vh;
 
 }
+
+/*-----Barre de navigation-----*/
 
 .nav {
 
@@ -24,7 +26,7 @@ body {
   width: 65px;
   background-color: white;
   transition: 1.5s;
-  overflow: hidden;
+  overflow-x: hidden;
 
 }
 
@@ -33,6 +35,8 @@ body {
   width: 240px;
 
 }
+
+/*-----Ligne-----*/
 
 .ligne {
 
@@ -45,6 +49,8 @@ body {
   height: 1px;
 
 }
+
+/*-----Menu burger-----*/
 
 .btn {
 
@@ -103,6 +109,8 @@ body {
 
 }
 
+/*-----Contenaires des boutons-----*/
+
 .list {
 
   display: flex;
@@ -120,17 +128,25 @@ body {
 
 }
 
-.list:hover {
-
-  background-color: rgb(96, 96, 216);
-
-}
-
 .nav.active .list {
 
   width: 220px;
 
 }
+
+.list:hover {
+
+  background-color: rgb(129, 65, 226);
+
+}
+
+.list.active {
+
+  background-color: rgb(129, 65, 226);
+
+}
+
+/*-----Images-----*/
 
 .img {
 
@@ -138,6 +154,8 @@ body {
   height: 33px;
 
 }
+
+/*-----Textes-----*/
 
 .txt {
 
@@ -147,17 +165,128 @@ body {
 
 }
 
+/*-----Marges des pages----*/
+
+.section1, .section2, .section3 {
+
+  margin: 0px 15px 0px 75px;
+  
+}
+
+/*-----Titres tests-----*/
+
 .titre {
 
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
+  position: relative;
+  top: 5px;
+  font-size: 2em;
+  color: rgb(129, 65, 226);
+  margin-bottom: 7px;
 
 }
 
-.section1,
-.section2,
-.section3 {
-  margin-left: 70px;
+/*-----Scroll bar pour webkit-----*/
+
+::-webkit-scrollbar {
+
+  width: 0.5vw;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background-color: rgb(129, 65, 226);
+  border-radius: 6vh;
+  height: 16.5vh; 
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background-color: #555;
+
+}
+
+@media screen and (max-width: 425px) {
+
+  body {
+
+    background-color: white;
+
+  }
+
+  /*-----Barre de navigation-----*/
+
+  .nav {
+
+    top: unset;
+    bottom: 0;
+    height: 65px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 0, 0, 0) 100%);
+
+  }
+
+  /*-----Ligne-----*/
+
+  .ligne {
+
+    display: none
+  
+  }
+
+  /*-----Menu burger-----*/
+
+  .btn {
+
+    display: none;
+  
+  }
+
+  /*-----Contenaires des boutons-----*/
+
+  .list {
+
+    gap: 0px;
+    top: 8px;
+    margin-bottom: 0px;
+    left: 0px;
+    width: 47px;
+    height: 47px;
+    padding: 7px 7px 7px 7px;
+    border-radius: 0px;
+    background-color: transparent;
+
+  }
+
+  .list:hover {
+
+    background-color: transparent;
+  
+  }
+  
+  .list.active {
+  
+    background-color: transparent;
+  
+  }
+
+  /*-----Textes-----*/
+
+  .txt {
+
+    display: none;
+
+  }
+
+  /*-----Marges des pages----*/
+
+  .section1, .section2, .section3 {
+
+    margin: 0px 15px 0px 15px;
+    
+  }
 }
