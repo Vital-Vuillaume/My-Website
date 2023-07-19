@@ -1,3 +1,11 @@
+//------pour que le site soit securise------\\
+
+/*if (window.location.protocol != "https:") {
+  window.location.protocol="https:";
+}*/
+
+//------Element html------\\
+
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
 const btn3 = document.getElementById('btn3');
@@ -9,6 +17,12 @@ const nav = document.querySelector(".nav");
 const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
+
+//-----Afficher la section 1 par défaut----\\
+
+window.addEventListener('load', function() {
+  showSection(section1);
+});
 
 //-----Changement de page-----\\
 
@@ -31,19 +45,13 @@ btn3.addEventListener('click', function() {
   showSection(section3);
 });
 
-//-----Afficher la section 1 par défaut----\\
-
-window.addEventListener('load', function() {
-  showSection(section1);
-});
-
 //-----Barre de navigation qui s'agrandit-----\\
 
 btn.onclick = function ajouterClassNav() {
    nav.classList.toggle("active"); 
 };
 
-//-----Afficher Accueil par défaut-----\\
+//-----Afficher le bouton accueil par défaut-----\\
 
 btn1.classList.add('active');
 image1.src = 'accueil-active.png';
