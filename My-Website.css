@@ -169,7 +169,7 @@ body {
 
 .section1, .section2, .section3 {
 
-  margin: 0px 15px 0px 75px;
+  margin: 0px 15px 15px 75px;
   
 }
 
@@ -251,7 +251,7 @@ body {
   .list {
 
     gap: 0px;
-    top: 8px;
+    top: 9px;
     margin-bottom: 0px;
     left: 0px;
     width: 47px;
@@ -286,7 +286,7 @@ body {
 
   .section1, .section2, .section3 {
 
-    margin: 0px 15px 0px 15px;
+    margin: 0px 15px 70px 15px;
     
   }
 }
