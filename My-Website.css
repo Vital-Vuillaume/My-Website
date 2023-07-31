@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+
+body {
+
+  background-color: rgb(220, 218, 218);
+  min-height: 100vh;
+
+}
+
+/*-----Barre de navigation-----*/
+
+.nav {
+
+  top: 0;
+  position: fixed;
+  height: 100vh;
+  width: 65px;
+  background-color: white;
+  transition: 1.3s;
+  overflow-x: hidden;
+
+}
+
+.nav.active {
+
+  width: 240px;
+
+}
+
+/*-----Ligne-----*/
+
+.ligne {
+
+  width: 100%;
+  background-color: black;
+  position: absolute;
+  left: 50%;
+  top: 60px;
+  transform: translate(-50%, -50%);
+  height: 1px;
+
+}
+
+/*-----Menu burger-----*/
+
+.btn {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+
+}
+
+.btn::before {
+
+  content: "";
+  position: absolute;
+  left: 32.5px;
+  top: 35%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  transition: 0.7s;
+
+}
+
+.btn::after {
+
+  content: "";
+  position: absolute;
+  left: 32.5px;
+  top: 65%;
+  transform: translate(-50%, -50%);
+  width: 35px;
+  height: 2px;
+  background-color: black;
+  box-shadow: 0 -9px 0 black;
+  transition: 0.7s;
+
+}
+
+.nav.active .btn::before {
+
+  transform:  rotate(45deg);
+  left: 10.5px;
+  top: 50%;
+
+}
+
+.nav.active .btn::after {
+
+  transform:  rotate(-45deg);
+  box-shadow: none;
+  left: 10.5px;
+  top: 50%;
+
+}
+
+/*-----Contenaires des boutons-----*/
+
+.list {
+
+  display: flex;
+  gap: 30px;
+  position: relative;
+  top: 131px;
+  margin-bottom: 36px;
+  left: 9px;
+  list-style: none;
+  width: 47px;
+  padding: 7px 7px 7px 7px;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: 0.5s;
+
+}
+
+.nav.active .list {
+
+  width: 220px;
+
+}
+
+.list:hover {
+
+  background-color: rgb(129, 65, 226);
+
+}
+
+.list.active {
+
+  background-color: rgb(129, 65, 226);
+
+}
+
+/*-----Images-----*/
+
+.img {
+
+  width: 33px;
+  height: 33px;
+
+}
+
+/*-----Textes-----*/
+
+.txt {
+
+  position: relative;
+  top: 7px;
+  font-size: 1.1em;
+
+}
+
+/*-----Marges des pages----*/
+
+.section1, .section2, .section3 {
+
+  margin: 0px 15px 0px 75px;
+  
+}
+
+/*-----Titres tests-----*/
+
+.titre {
+
+  position: relative;
+  top: 5px;
+  font-size: 2em;
+  color: rgb(129, 65, 226);
+  margin-bottom: 7px;
+
+}
+
+/*-----Scroll bar pour webkit-----*/
+
+::-webkit-scrollbar {
+
+  width: 0.5vw;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+  background-color: rgb(129, 65, 226);
+  border-radius: 6vh;
+  height: 16.5vh; 
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+
+  background-color: #555;
+
+}
+
+@media screen and (max-width: 425px) {
+
+  body {
+
+    background-color: white;
+
+  }
+
+  /*-----Barre de navigation-----*/
+
+  .nav {
+
+    top: unset;
+    bottom: 0;
+    height: 65px;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    gap: 20%;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 0, 0, 0) 100%);
+
+  }
+
+  /*-----Ligne-----*/
+
+  .ligne {
+
+    display: none
+  
+  }
+
+  /*-----Menu burger-----*/
+
+  .btn {
+
+    display: none;
+  
+  }
+
+  /*-----Contenaires des boutons-----*/
+
+  .list {
+
+    gap: 0px;
+    top: 8px;
+    margin-bottom: 0px;
+    left: 0px;
+    width: 47px;
+    height: 47px;
+    padding: 7px 7px 7px 7px;
+    border-radius: 0px;
+    background-color: transparent;
+
+  }
+
+  .list:hover {
+
+    background-color: transparent;
+  
+  }
+  
+  .list.active {
+  
+    background-color: transparent;
+  
+  }
+
+  /*-----Textes-----*/
+
+  .txt {
+
+    display: none;
+
+  }
+
+  /*-----Marges des pages----*/
+
+  .section1, .section2, .section3 {
+
+    margin: 0px 15px 0px 15px;
+    
+  }
+}
