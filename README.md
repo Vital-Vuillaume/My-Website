@@ -1,6 +1,6 @@
-# My Project-Booklet
+# My Website
 
-Welcome to "My Project Booklet"! Discover my exciting and personal projects, and adjust the settings for a tailor-made experience. Ready to embark on this creative journey?
+Welcome to "My Website"! Discover my exciting and personal projects, and adjust the settings for a tailor-made experience. Ready to embark on this creative journey?
 
 ## Technologies Used
 
@@ -12,7 +12,7 @@ This site was developed using the following technologies:
 
 ## How to Use the Site
 
-To access the site, simply click on the following link: [Loading...](https://rmbi.ch/vital/projets)
+To access the site, simply click on the following link: [My Website](https://rmbi.ch/vital/projets)
 
 Once on the site, you will find a page but with several pages:
 
