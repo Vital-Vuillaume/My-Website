@@ -136,13 +136,13 @@ body {
 
 .list:hover {
 
-  background-color: rgb(109, 90, 206);
+  background-color: #6d4aff;
 
 }
 
 .list.active {
 
-  background-color: rgb(109, 90, 206);
+  background-color: #6d4aff;
 
 }
 
@@ -180,7 +180,7 @@ body {
   position: relative;
   top: 5px;
   font-size: 2em;
-  color: rgb(109, 90, 206);
+  color: #6d4aff;
   margin-bottom: 7px;
 
 }
@@ -195,7 +195,7 @@ body {
 
 ::-webkit-scrollbar-thumb {
 
-  background-color: rgb(109, 90, 206);
+  background-color: #6d4aff;
   border-radius: 6vh;
   height: 16.5vh; 
 
