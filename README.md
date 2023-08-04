@@ -27,9 +27,9 @@
 
 ## Contribution
 
-### I am open to contributions and suggestions to improve this site:
+- ### I am open to contributions and suggestions to improve this site:
 
-**1. You can fork the site.**
+  **1. You can fork the site.**
 
 ## Acknowledgments
 
