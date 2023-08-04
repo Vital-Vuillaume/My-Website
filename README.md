@@ -1,6 +1,6 @@
 # My Website
 
-Welcome to "My Website"! Discover my exciting and personal projects, and adjust the settings for a tailor-made experience. Ready to embark on this creative journey?
+Welcome to My Website! Discover my exciting and personal projects, and adjust the settings for a tailor-made experience. Ready to embark on this creative journey?
 
 ## Technologies Used
 
