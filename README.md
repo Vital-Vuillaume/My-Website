@@ -10,7 +10,7 @@
 
 ## How to Use the Site
 
-**To access the site, simply click on the following link:** [***My Website***](https://rmbi.ch/vital/)
+### To access the site, simply click on the following link: [***My Website***](https://rmbi.ch/vital/)
 
 **Once on the site, you will find a page but with several pages:**
 
