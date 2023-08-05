@@ -11,7 +11,7 @@
 
 body {
 
-  background-color: rgb(220, 218, 218);
+  background-color: rgb(230, 230, 230);
   min-height: 100vh;
 
 }
@@ -121,7 +121,7 @@ body {
   left: 9px;
   list-style: none;
   width: 47px;
-  padding: 7px 7px 7px 7px;
+  padding: 7px;
   cursor: pointer;
   border-radius: 10px;
   transition: 0.5s;
