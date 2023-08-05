@@ -25,7 +25,8 @@ body {
   height: 100vh;
   width: 65px;
   background-color: white;
-  transition: 1.3s;
+  transition: background-color 0s;
+  transition: width 1.3s;
   overflow-x: hidden;
 
 }
@@ -185,6 +186,52 @@ body {
 
 }
 
+/*---------------------------
+-------Page parametres-------
+---------------------------*/
+
+/*-----Bouton dark mode-----*/
+
+.btnDark {
+
+  width: 10px;
+  cursor: pointer;
+
+}
+
+/*-----Dark mode-----*/
+
+body.active {
+
+  background-color: #242231;
+  color: white;
+
+}
+
+body.active .nav {
+
+  background-color: #292837;
+  transition: background-color 0s;
+  transition: width 1.3s;
+
+}
+
+body.active .ligne {
+
+  background-color: white;
+}
+
+body.active .btn::after {
+
+  background-color: white;
+  box-shadow: 0 -9px 0 white;
+}
+
+body.active .btn::before {
+
+  background-color: white;
+}
+
 /*-----Scroll bar pour webkit-----*/
 
 ::-webkit-scrollbar {
@@ -288,5 +335,13 @@ body {
 
     margin: 0px 15px 62.5px 15px;
     
+  }
+
+  /*-----Dark mode-----*/
+
+  body.active .nav {
+
+    background: linear-gradient(0deg, rgba(41,40,55,1) 0%, rgba(41,40,55,0.1) 100%);
+  
   }
 }

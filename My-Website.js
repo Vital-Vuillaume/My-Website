@@ -17,6 +17,8 @@ const nav = document.querySelector(".nav");
 const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
+const btnDark = document.querySelector('.btnDark');
+const body = document.querySelector('body');
 
 //-----Afficher la section 1 par défaut----\\
 
@@ -96,4 +98,32 @@ btn3.onclick = function() {
   btn1.classList.remove('active');
   image2.src = 'recherche.png';
   btn2.classList.remove('active');
+};
+
+/*---------------------------
+-------Page parametres-------
+---------------------------*/
+
+//-----Dark mode-----\\
+
+let modeSombreActive = false;
+
+function toggleModeSombre() {
+  body.classList.toggle("active");
+  modeSombreActive = !modeSombreActive;
+  localStorage.setItem("modeSombre", modeSombreActive);
+};
+
+//-----Bouton dark mode-----\\
+
+btnDark.onclick = function ajouterClassBody() {
+  toggleModeSombre();
+};
+
+//-----Sauvegarde dark mode-----\\
+
+const modeSombreStocke = localStorage.getItem("modeSombre");
+if (modeSombreStocke === "true") {
+  body.classList.add("active");
+  modeSombreActive = true;
 };
