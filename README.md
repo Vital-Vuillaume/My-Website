@@ -21,6 +21,7 @@
 - ### Projects:
   
    **A page where I showcase my projects and those of [***Asterjdm***](https://github.com/asterjdm) and [***Feur-company***](https://github.com/Feur-company)**
+  
 - ### Settings:
   
    **Experience an immersive settings page with dynamic light/dark themes and a selection of music and much more. Personalize your experience like never before!**
