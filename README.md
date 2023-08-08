@@ -4,7 +4,7 @@
 
 ## Technologies Used
 
-**This site was developed using the following technologies:**
+**This site was developed using the following technologies:*
 
 [![My Skills](https://skillicons.dev/icons?i=html,css,js)](https://github.com/Vital-Vuillaume)
 
