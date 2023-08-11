@@ -220,17 +220,20 @@ body.active .nav {
 body.active .ligne {
 
   background-color: white;
+
 }
 
 body.active .btn::after {
 
   background-color: white;
   box-shadow: 0 -9px 0 white;
+
 }
 
 body.active .btn::before {
 
   background-color: white;
+  
 }
 
 /*-----Scroll bar pour webkit-----*/

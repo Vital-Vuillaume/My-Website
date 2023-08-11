@@ -33,18 +33,22 @@ function showSection(section) {
   section2.style.display = 'none';
   section3.style.display = 'none';
   section.style.display = 'block';
+  window.scrollTo(0, 0);
 }
 
 btn1.addEventListener('click', function() {
   showSection(section1);
+  window.scrollTo(0, 0);
 });
 
 btn2.addEventListener('click', function() {
   showSection(section2);
+  window.scrollTo(0, 0);
 });
 
 btn3.addEventListener('click', function() {
   showSection(section3);
+  window.scrollTo(0, 0);
 });
 
 //-----Barre de navigation qui s'agrandit-----\\
