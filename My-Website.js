@@ -133,7 +133,7 @@ const customSearches = {
   ],
 
   'contact': [
-    { name: 'Mail', link: 'vitalvuillaume@proton.me'}
+    { name: 'Mail', link: 'mailto:vitalvuillaume@proton.me'}
   ]
 };
 
