@@ -16,6 +16,14 @@ body {
 
 }
 
+/*-----Marges des pages----*/
+
+.section1, .section2, .section3 {
+
+  margin: 0px 15px 15px 75px;
+  
+}
+
 /*-----Barre de navigation-----*/
 
 .nav {
@@ -166,14 +174,6 @@ body {
 
 }
 
-/*-----Marges des pages----*/
-
-.section1, .section2, .section3 {
-
-  margin: 0px 15px 15px 75px;
-  
-}
-
 /*-----Titres tests-----*/
 
 .titre {
@@ -194,13 +194,6 @@ body {
 /*-----Bouton dark mode-----*/
 
 .btnDark {
-
-  width: 40px;
-  cursor: pointer;
-
-}
-
-.btnEcran {
 
   width: 40px;
   cursor: pointer;
@@ -243,6 +236,15 @@ body.active .btn::before {
   
 }
 
+/*-----Bouton Ecran-----*/
+
+.btnEcran {
+
+  width: 40px;
+  cursor: pointer;
+
+}
+
 /*-----Scroll bar pour webkit-----*/
 
 ::-webkit-scrollbar {
@@ -265,12 +267,35 @@ body.active .btn::before {
 
 }
 
+/*-----Pas disponible pour les petits écrans-----*/
+
+@media screen and (max-width: 1023px) {
+
+  /*-----Bouton Ecran-----*/
+
+  .btnEcran {
+
+    display: none;
+
+  }
+}
+
+/*-----Vu pour mobile-----*/
+
 @media screen and (max-width: 425px) {
 
   body {
 
     background-color: white;
 
+  }
+
+  /*-----Marges des pages----*/
+
+  .section1, .section2, .section3 {
+
+    margin: 0px 15px 62.5px 15px;
+    
   }
 
   /*-----Barre de navigation-----*/
@@ -338,14 +363,6 @@ body.active .btn::before {
 
     display: none;
 
-  }
-
-  /*-----Marges des pages----*/
-
-  .section1, .section2, .section3 {
-
-    margin: 0px 15px 62.5px 15px;
-    
   }
 
   /*-----Dark mode-----*/

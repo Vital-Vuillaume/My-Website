@@ -21,7 +21,7 @@ const btnDark = document.querySelector('.btnDark');
 const BtnEcran = document.querySelector('.btnEcran');
 const body = document.querySelector('body');
 
-//-----Afficher la section 1 par défaut----\\
+//-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
   showSection(section1);
@@ -58,7 +58,7 @@ btn.onclick = function ajouterClassNav() {
    nav.classList.toggle("active"); 
 };
 
-//-----Afficher le bouton accueil par défaut-----\\
+//-----Afficher le bouton accueil par defaut-----\\
 
 btn1.classList.add('active');
 image1.src = 'accueil-active.png';
@@ -145,7 +145,7 @@ function enterFullscreen() {
   } else if (document.documentElement.msRequestFullscreen) {
     document.documentElement.msRequestFullscreen();
   }
-}
+};
 
 //-----Sortir du mode plein ecran-----\\
 
@@ -159,7 +159,7 @@ function exitFullscreen() {
   } else if (document.msExitFullscreen) {
     document.msExitFullscreen();
   }
-}
+};
 
 //-----Bouton Ecran-----\\
 
