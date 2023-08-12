@@ -195,7 +195,14 @@ body {
 
 .btnDark {
 
-  width: 32.5px;
+  width: 40px;
+  cursor: pointer;
+
+}
+
+.btnEcran {
+
+  width: 40px;
   cursor: pointer;
 
 }

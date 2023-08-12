@@ -18,6 +18,7 @@ const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
 const btnDark = document.querySelector('.btnDark');
+const BtnEcran = document.querySelector('.btnEcran');
 const body = document.querySelector('body');
 
 //-----Afficher la section 1 par défaut----\\
@@ -130,4 +131,42 @@ const modeSombreStocke = localStorage.getItem("modeSombre");
 if (modeSombreStocke === "true") {
   body.classList.add("active");
   modeSombreActive = true;
+};
+
+//-----Passer en mode plein ecran-----\\
+
+function enterFullscreen() {
+  if (document.documentElement.requestFullscreen) {
+    document.documentElement.requestFullscreen();
+  } else if (document.documentElement.mozRequestFullScreen) {
+    document.documentElement.mozRequestFullScreen();
+  } else if (document.documentElement.webkitRequestFullscreen) {
+    document.documentElement.webkitRequestFullscreen();
+  } else if (document.documentElement.msRequestFullscreen) {
+    document.documentElement.msRequestFullscreen();
+  }
+}
+
+//-----Sortir du mode plein ecran-----\\
+
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  } else if (document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
+//-----Bouton Ecran-----\\
+
+BtnEcran.onclick =  function() {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    enterFullscreen();
+  } else {
+    exitFullscreen();
+  }
 };
