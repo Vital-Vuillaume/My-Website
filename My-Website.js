@@ -17,9 +17,11 @@ const nav = document.querySelector(".nav");
 const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
+const body = document.querySelector('body');
 const btnDark = document.querySelector('.btnDark');
 const BtnEcran = document.querySelector('.btnEcran');
-const body = document.querySelector('body');
+const Recherche = document.querySelector('.recherche');
+const resultats = document.querySelector('.resultats');
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -63,7 +65,7 @@ btn.onclick = function ajouterClassNav() {
 btn1.classList.add('active');
 image1.src = 'accueil-active.png';
 
-//-----changement des boutons-----\\
+//-----Changement des boutons-----\\
 
 btn1.onclick = function() {
   if (btn1.classList.contains('active')) {
@@ -103,6 +105,77 @@ btn3.onclick = function() {
   btn1.classList.remove('active');
   image2.src = 'recherche.png';
   btn2.classList.remove('active');
+};
+
+/*---------------------------
+-------Page Recherche-------
+---------------------------*/
+
+//-----Recherche-----\\
+
+const customSearches = {
+  'site': [
+    { name: 'Uppercase-Converter', link: 'https://rmbi.ch/vital/uppercase-converter/' },
+    { name: 'Time-Converter', link: 'https://rmbi.ch/vital/time-converter/' },
+    { name: 'Text-Meter', link: 'https://rmbi.ch/vital/text-meter/' },
+    { name: 'Mon premier site', link: 'https://rmbi.ch/vital/mfsh/' }
+  ],
+
+  'colaboration': [
+    { name: 'Cesco', link: 'https://rmbi.ch/cesco/' },
+    { name: 'Cesco-Leak', link: 'https://github.com/Vital-Vuillaume/Interactive-Carousel-for-Cesco-Leak' },
+    { name: 'Cosmos-Search', link: 'https://github.com/Vital-Vuillaume/Cosmos-Search' }
+  ],
+
+  'réseau': [
+    { name: 'github', link: 'https://github.com/Vital-Vuillaume' },
+    { name: 'linkedin', link: 'https://www.linkedin.com/in/vital-vuillaume-bb7167273/' }
+  ],
+
+  'contact': [
+    { name: 'Mail', link: 'vitalvuillaume@proton.me'}
+  ]
+};
+
+//-----Input qui recherche-----\\
+
+Recherche.addEventListener('input', showResults);
+
+function showResults() {
+  const searchTerm = Recherche.value.trim().toLowerCase();
+
+  if (searchTerm === '') {
+    clearResults();
+  } else {
+    displaySearchResults(searchTerm);
+  }
+};
+
+function clearResults() {
+  resultats.innerHTML = '';
+};
+
+//-----Disposition des resultats-----\\
+
+function displaySearchResults(searchTerm) {
+  clearResults();
+
+  for (const key in customSearches) {
+    if (customSearches.hasOwnProperty(key)) {
+      if (key.includes(searchTerm)) {
+        const result = Array.isArray(customSearches[key]) ?
+          customSearches[key].map(item => `- <a href="${item.link}">${item.name}</a>`).join('<br>') :
+          `- <a href="${customSearches[key]}">${customSearches[key]}</a>`;
+        const resultElement = document.createElement('div');
+        resultElement.innerHTML = `<strong>${key} :</strong><br>${result}`;
+        resultats.appendChild(resultElement);
+      }
+    }
+  }
+
+  if (resultats.innerHTML === '') {
+    resultats.innerHTML = 'Aucun résultat trouvé pour la recherche.';
+  }
 };
 
 /*---------------------------
