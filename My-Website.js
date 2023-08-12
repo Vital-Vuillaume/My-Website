@@ -130,10 +130,6 @@ const customSearches = {
   'réseau': [
     { name: 'github', link: 'https://github.com/Vital-Vuillaume' },
     { name: 'linkedin', link: 'https://www.linkedin.com/in/vital-vuillaume-bb7167273/' }
-  ],
-
-  'contact': [
-    { name: 'Mail', link: 'mailto:vitalvuillaume@proton.me'}
   ]
 };
 
@@ -149,11 +145,11 @@ function showResults() {
   } else {
     displaySearchResults(searchTerm);
   }
-};
+}
 
 function clearResults() {
   resultats.innerHTML = '';
-};
+}
 
 //-----Disposition des resultats-----\\
 
@@ -164,19 +160,28 @@ function displaySearchResults(searchTerm) {
     if (customSearches.hasOwnProperty(key)) {
       if (key.includes(searchTerm)) {
         const result = Array.isArray(customSearches[key]) ?
-          customSearches[key].map(item => `- <a href="${item.link}">${item.name}</a>`).join('<br>') :
-          `- <a href="${customSearches[key]}">${customSearches[key]}</a>`;
+          customSearches[key].map(item => `<div><a class="lienRecherche" href="${item.link}">${item.name}</a></div>`).join('') :
+          `<div><a class="lienRecherche" href="${customSearches[key]}">${customSearches[key]}</a></div>`;
         const resultElement = document.createElement('div');
-        resultElement.innerHTML = `<strong>${key} :</strong><br>${result}`;
+        resultElement.innerHTML = `<div class="titreRecherche">${key} :</div>${result}`;
+        
+        if (key === 'site') {
+          resultElement.classList.add('site-category');
+        } else if (key === 'colaboration') {
+          resultElement.classList.add('colaboration-category');
+        } else if (key === 'réseau') {
+          resultElement.classList.add('réseau-category');
+        }
+        
         resultats.appendChild(resultElement);
       }
     }
   }
-
+  
   if (resultats.innerHTML === '') {
-    resultats.innerHTML = 'Aucun résultat trouvé pour la recherche.';
-  }
-};
+    resultats.innerHTML = '<div class="no-results">Aucun résultat trouvé pour la recherche.</div>';
+  }  
+}
 
 /*---------------------------
 -------Page parametres-------
