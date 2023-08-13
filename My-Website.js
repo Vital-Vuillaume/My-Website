@@ -110,7 +110,7 @@ btn3.onclick = function() {
 };
 
 /*---------------------------
---------Page accueill--------
+--------Page accueil---------
 ---------------------------*/
 
 
@@ -129,7 +129,7 @@ const customSearches = {
     { name: 'Mon premier site', link: 'https://rmbi.ch/vital/mfsh/' }
   ],
 
-  'colaboration': [
+  'collaboration': [
     { name: 'Cesco', link: 'https://rmbi.ch/cesco/' },
     { name: 'Cesco-Leak', link: 'https://github.com/Vital-Vuillaume/Interactive-Carousel-for-Cesco-Leak' },
     { name: 'Cosmos-Search', link: 'https://github.com/Vital-Vuillaume/Cosmos-Search' }
@@ -147,6 +147,7 @@ Recherche.addEventListener('input', showResults);
 
 function showResults() {
   const searchTerm = Recherche.value.trim().toLowerCase();
+  localStorage.setItem('previousSearch', searchTerm);
 
   if (searchTerm === '') {
     clearResults();
@@ -175,8 +176,8 @@ function displaySearchResults(searchTerm) {
         
         if (key === 'site') {
           resultElement.classList.add('site-category');
-        } else if (key === 'colaboration') {
-          resultElement.classList.add('colaboration-category');
+        } else if (key === 'collaboration') {
+          resultElement.classList.add('collaboration-category');
         } else if (key === 'réseau') {
           resultElement.classList.add('réseau-category');
         }

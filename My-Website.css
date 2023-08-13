@@ -215,7 +215,7 @@ body {
 
 /*-----Bloc des reponses-----*/
 
-.site-category, .colaboration-category, .réseau-category {
+.site-category, .collaboration-category, .réseau-category {
 
   background-color: white;
   padding: 15px 15px 15px 22.5px;
@@ -305,7 +305,7 @@ body {
 }
 
 /*---------------------------
---------Page accueill--------
+--------Page accueil---------
 ---------------------------*/
 
 
@@ -358,7 +358,7 @@ body.active .btn::after {
 
 }
 
-body.active .recherche, body.active .site-category, body.active .colaboration-category, body.active .réseau-category, body.active .lienRecherche {
+body.active .recherche, body.active .site-category, body.active .collaboration-category, body.active .réseau-category, body.active .lienRecherche {
 
   color: white;
   background-color: #292837;
@@ -418,7 +418,7 @@ body.active ::-moz-placeholder {
   
   }
   
-  .site-category, .colaboration-category, .réseau-category {
+  .site-category, .collaboration-category, .réseau-category {
   
     width: 450px;
     padding: 10px 10px 10px 10px;
@@ -479,7 +479,7 @@ body.active ::-moz-placeholder {
   
   }
   
-  .site-category, .colaboration-category, .réseau-category {
+  .site-category, .collaboration-category, .réseau-category {
   
     width: 330px;
     padding: 10px 10px 0px 10px;
@@ -590,7 +590,7 @@ body.active ::-moz-placeholder {
     
   }
 
-  .site-category, .colaboration-category, .réseau-category {
+  .site-category, .collaboration-category, .réseau-category {
   
     width: 100%;
     background-color: rgb(230, 230, 230);
