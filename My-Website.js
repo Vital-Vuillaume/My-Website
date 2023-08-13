@@ -175,11 +175,11 @@ function displaySearchResults(searchTerm) {
         resultElement.innerHTML = `<div class="titreRecherche">${key} :</div>${result}`;
         
         if (key === 'site') {
-          resultElement.classList.add('site-category');
+          resultElement.classList.add('category');
         } else if (key === 'collaboration') {
-          resultElement.classList.add('collaboration-category');
+          resultElement.classList.add('category');
         } else if (key === 'réseau') {
-          resultElement.classList.add('réseau-category');
+          resultElement.classList.add('category');
         }
         
         resultats.appendChild(resultElement);
