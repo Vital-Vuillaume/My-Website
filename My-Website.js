@@ -1,8 +1,8 @@
 //------Pour que le site soit securise------\\
 
-if (window.location.protocol != "https:") {
+/*if (window.location.protocol != "https:") {
   window.location.protocol="https:";
-}
+}*/
 
 //------Element html------\\
 
@@ -165,6 +165,12 @@ function clearResults() {
 function displaySearchResults(searchTerm) {
   clearResults();
 
+  const categoryClasses = {
+    'site': 'category',
+    'collaboration': 'category',
+    'réseau': 'category'
+  };
+
   for (const key in customSearches) {
     if (customSearches.hasOwnProperty(key)) {
       if (key.includes(searchTerm)) {
@@ -173,15 +179,11 @@ function displaySearchResults(searchTerm) {
           `<div><a class="lienRecherche" href="${customSearches[key]}">${customSearches[key]}</a></div>`;
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `<div class="titreRecherche">${key} :</div>${result}`;
-        
-        if (key === 'site') {
-          resultElement.classList.add('category');
-        } else if (key === 'collaboration') {
-          resultElement.classList.add('category');
-        } else if (key === 'réseau') {
-          resultElement.classList.add('category');
+
+        if (categoryClasses.hasOwnProperty(key)) {
+          resultElement.classList.add(categoryClasses[key]);
         }
-        
+
         resultats.appendChild(resultElement);
       }
     }
@@ -192,6 +194,7 @@ function displaySearchResults(searchTerm) {
   }  
   localStorage.setItem('previousSearch', searchTerm);
 }
+
 
 //-----Sauvegarde de la recherhe-----\\
 
