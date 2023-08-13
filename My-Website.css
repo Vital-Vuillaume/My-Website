@@ -367,13 +367,13 @@ body.active .recherche, body.active .category, body.active .lienRecherche {
 
 body.active ::placeholder {
 
-  color: rgb(161, 160, 160);
+  color: rgb(185, 185, 185);
 
 }
 
 body.active ::-moz-placeholder {
 
-  color: rgb(161, 160, 160);
+  color: rgb(185, 185, 185);
 
 }
 
