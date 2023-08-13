@@ -498,7 +498,7 @@ body.active ::-moz-placeholder {
     font-size: 0.9em;
     left: 150px;
     line-height: 25px;
-    bottom: 17.5px;
+    bottom: 18px;
   
   }
 }
@@ -599,10 +599,8 @@ body.active ::-moz-placeholder {
   
   .lienRecherche {
   
-    font-size: 0.9em;
     left: 55%;
     line-height: 35px;
-    bottom: 17.5px;
   
   }
 
