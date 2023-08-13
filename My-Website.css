@@ -24,6 +24,19 @@ body {
   
 }
 
+/*-----Titres tests-----*/
+
+.titre {
+
+  position: relative;
+  top: 5px;
+  font-size: 2em;
+  color: #6d47ff;
+  margin-bottom: 10px;
+  width: 180px;
+
+}
+
 /*-----Barre de navigation-----*/
 
 .nav {
@@ -174,22 +187,11 @@ body {
 
 }
 
-/*-----Titres tests-----*/
-
-.titre {
-
-  position: relative;
-  top: 5px;
-  font-size: 2em;
-  color: #6d47ff;
-  margin-bottom: 7px;
-  width: 180px;
-
-}
-
 /*---------------------------
--------Page recherche-------
+-------Page recherche--------
 ---------------------------*/
+
+/*-----L'input-----*/
 
 .containerRecherche {
 
@@ -211,6 +213,8 @@ body {
 
 }
 
+/*-----Bloc des reponses-----*/
+
 .site-category, .colaboration-category, .réseau-category {
 
   background-color: white;
@@ -223,6 +227,8 @@ body {
 
 }
 
+/*-----Titres des blocs des reponses-----*/
+
 .titreRecherche {
 
   font-size: 1.5em;
@@ -234,6 +240,8 @@ body {
   color: white;
 
 }
+
+/*-----Liens des blocs des reponses-----*/
 
 .lienRecherche {
 
@@ -256,7 +264,7 @@ body {
   left: 0;
   width: 0;
   height: 2px;
-  background-color: rgb(117, 117, 173);
+  background-color: #6d47ff;
   transition: width 0.7s ease-in-out;
 
 }
@@ -275,7 +283,7 @@ body {
   right: 0;
   width: 0;
   height: 2px;
-  background-color: rgb(117, 117, 173);
+  background-color: #6d47ff;
   transition: width 0.7s ease-in-out;
 
 }
@@ -286,6 +294,8 @@ body {
 
 }
 
+/*-----Pas de resultat-----*/
+
 .no-results {
 
   font-size: 1.2em;
@@ -293,6 +303,12 @@ body {
   margin-top: 20px;
 
 }
+
+/*---------------------------
+--------Page accueill--------
+---------------------------*/
+
+
 
 /*---------------------------
 -------Page parametres-------
@@ -319,12 +335,17 @@ body.active {
 body.active .nav {
 
   background-color: #292837;
-  transition: background-color 0s;
-  transition: width 1.3s;
+  transition: background-color 0s, width 1.3s;
 
 }
 
 body.active .ligne {
+
+  background-color: white;
+
+}
+
+body.active .btn::before {
 
   background-color: white;
 
@@ -337,10 +358,23 @@ body.active .btn::after {
 
 }
 
-body.active .btn::before {
+body.active .recherche, body.active .site-category, body.active .colaboration-category, body.active .réseau-category, body.active .lienRecherche {
 
-  background-color: white;
-  
+  color: white;
+  background-color: #292837;
+
+}
+
+body.active ::placeholder {
+
+  color: rgb(161, 160, 160);
+
+}
+
+body.active ::-moz-placeholder {
+
+  color: rgb(161, 160, 160);
+
 }
 
 /*-----Bouton Ecran-----*/
@@ -430,8 +464,6 @@ body.active .btn::before {
   
   }
 
-  /*-----Bouton Ecran-----*/
-
   .btnEcran {
 
     display: none;
@@ -443,13 +475,13 @@ body.active .btn::before {
   
   .recherche {
   
-    width: 200px;
+    width: 330px;
   
   }
   
   .site-category, .colaboration-category, .réseau-category {
   
-    width: 290px;
+    width: 330px;
     padding: 10px 10px 0px 10px;
   
   }
@@ -465,17 +497,9 @@ body.active .btn::before {
   
     font-size: 0.9em;
     left: 150px;
-    line-height: 35px;
+    line-height: 25px;
     bottom: 17.5px;
   
-  }
-
-  /*-----Bouton Ecran-----*/
-
-  .btnEcran {
-
-    display: none;
-
   }
 }
 
@@ -489,15 +513,11 @@ body.active .btn::before {
 
   }
 
-  /*-----Marges des pages----*/
-
   .section1, .section2, .section3 {
 
     margin: 0px 15px 62.5px 15px;
     
   }
-
-  /*-----Barre de navigation-----*/
 
   .nav {
 
@@ -512,23 +532,17 @@ body.active .btn::before {
 
   }
 
-  /*-----Ligne-----*/
-
   .ligne {
 
     display: none
   
   }
 
-  /*-----Menu burger-----*/
-
   .btn {
 
     display: none;
   
   }
-
-  /*-----Contenaires des boutons-----*/
 
   .list {
 
@@ -556,19 +570,73 @@ body.active .btn::before {
   
   }
 
-  /*-----Textes-----*/
-
   .txt {
 
     display: none;
 
   }
 
-  /*-----Dark mode-----*/
+  .containerRecherche {
+
+    display: block;
+  
+  }
+
+  .recherche {
+  
+    width: 100%;
+    transition: 0.9s;
+    background-color: rgb(230, 230, 230);
+    
+  }
+
+  .site-category, .colaboration-category, .réseau-category {
+  
+    width: 100%;
+    background-color: rgb(230, 230, 230);
+  
+  }
+  
+  .lienRecherche {
+  
+    font-size: 0.9em;
+    left: 55%;
+    line-height: 25px;
+    bottom: 17.5px;
+  
+  }
+
+  body.active .lienRecherche {
+  
+    background-color: unset;
+  
+  }
 
   body.active .nav {
 
     background: linear-gradient(0deg, rgba(36,34,49,1) 0%, rgba(36,34,49,0.1) 100%);
+  
+  }
+}
+
+@media screen and (max-width: 350px) {
+
+  .titreRecherche {
+  
+    font-size: 5vw;
+  
+  }
+
+  .lienRecherche {
+  
+    font-size: 4.5vw;
+    left: 48%;
+
+  }
+
+  .no-results {
+
+    font-size: 1em;
   
   }
 }

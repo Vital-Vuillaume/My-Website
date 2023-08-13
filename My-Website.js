@@ -37,6 +37,8 @@ function showSection(section) {
   section3.style.display = 'none';
   section.style.display = 'block';
   window.scrollTo(0, 0);
+
+  localStorage.setItem('activeSection', section.id);
 }
 
 btn1.addEventListener('click', function() {
@@ -108,7 +110,13 @@ btn3.onclick = function() {
 };
 
 /*---------------------------
--------Page Recherche-------
+--------Page accueill--------
+---------------------------*/
+
+
+
+/*---------------------------
+-------Page Recherche--------
 ---------------------------*/
 
 //-----Recherche-----\\
@@ -181,7 +189,18 @@ function displaySearchResults(searchTerm) {
   if (resultats.innerHTML === '') {
     resultats.innerHTML = '<div class="no-results">Aucun résultat trouvé pour la recherche.</div>';
   }  
+  localStorage.setItem('previousSearch', searchTerm);
 }
+
+//-----Sauvegarde de la recherhe-----\\
+
+window.addEventListener('load', function() {
+  const previousSearch = localStorage.getItem('previousSearch');
+  if (previousSearch) {
+    Recherche.value = previousSearch;
+    showResults();
+  }
+});
 
 /*---------------------------
 -------Page parametres-------
