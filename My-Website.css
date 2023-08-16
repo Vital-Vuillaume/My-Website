@@ -247,50 +247,45 @@ body {
 
   font-size: 1.1em;
   color: black;
+  width: max-content;
+  padding: 4px;
   text-decoration: none;
   position: relative;
-  left: 500px;
-  bottom: 17.5px;
-  line-height: 45px;
-  padding: 2px;
+  left: 497px;
+  bottom: 11.5px;
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.lienRecherche::before, .lienRecherche::after {
+  
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #6d47ff;
+  transition: width 0.7s ease-in-out;
 
 }
 
 .lienRecherche::after {
 
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background-color: #6d47ff;
-  transition: width 0.7s ease-in-out;
-
-}
-
-.lienRecherche:hover::after {
-
-  width: 100%;
+  left: 3px;
 
 }
 
 .lienRecherche::before {
 
-  content: "";
-  position: absolute;
-  bottom: -1px;
-  right: 0;
-  width: 0;
-  height: 2px;
-  background-color: #6d47ff;
-  transition: width 0.7s ease-in-out;
+  right: 3px;
 
 }
 
-.lienRecherche:hover::before {
+.lienRecherche:hover::before, .lienRecherche:hover::after {
 
-  width: 100%;
+  width: 60%;
 
 }
 
@@ -436,33 +431,22 @@ body.active ::-moz-placeholder {
   
     font-size: 1em;
     left: 250px;
-    line-height: 25px;
+    margin-bottom: 10px;
+    bottom: 10px;
   
   }
 
-  .lienRecherche::after {
+  .lienRecherche::after, .lienRecherche::before {
 
     display: none;
-  
+
   }
   
-  .lienRecherche:hover::after {
-  
+  .lienRecherche:hover::after, .lienRecherche:hover::before {
+
     width: 0%;
-  
-  }
-  
-  .lienRecherche::before {
-  
-    display: none;
-  
-  }
-  
-  .lienRecherche:hover::before {
-  
-    width: 0%;
-  
-  }
+
+  }  
 
   .btnEcran {
 
@@ -496,9 +480,9 @@ body.active ::-moz-placeholder {
   .lienRecherche {
   
     font-size: 0.9em;
-    left: 150px;
-    line-height: 25px;
-    bottom: 18px;
+    left: 148px;
+    margin-bottom: 1px;
+    bottom: 18.5px;
   
   }
 }
@@ -599,8 +583,9 @@ body.active ::-moz-placeholder {
   
   .lienRecherche {
   
-    left: 55%;
-    line-height: 35px;
+    left: 52.5%;
+    bottom: 13px;
+    margin-bottom: 10px;
   
   }
 
@@ -628,7 +613,7 @@ body.active ::-moz-placeholder {
   .lienRecherche {
   
     font-size: 4.5vw;
-    left: 48%;
+    left: 45%;
 
   }
 

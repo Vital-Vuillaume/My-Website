@@ -175,8 +175,8 @@ function displaySearchResults(searchTerm) {
     if (customSearches.hasOwnProperty(key)) {
       if (key.includes(searchTerm)) {
         const result = Array.isArray(customSearches[key]) ?
-          customSearches[key].map(item => `<div><a class="lienRecherche" href="${item.link}">${item.name}</a></div>`).join('') :
-          `<div><a class="lienRecherche" href="${customSearches[key]}">${customSearches[key]}</a></div>`;
+          customSearches[key].map(item => `<a class="lienRecherche" href="${item.link}">${item.name}</a>`).join('') :
+          `<a class="lienRecherche" href="${customSearches[key]}">${customSearches[key]}</a>`;
         const resultElement = document.createElement('div');
         resultElement.innerHTML = `<div class="titreRecherche">${key} :</div>${result}`;
 
