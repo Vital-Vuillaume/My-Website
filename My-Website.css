@@ -480,8 +480,8 @@ body.active ::-moz-placeholder {
   
     font-size: 0.9em;
     left: 148px;
-    margin-bottom: 1px;
-    bottom: 16px;
+    margin-bottom: 10px;
+    bottom: 12.5px;
   
   }
 }
