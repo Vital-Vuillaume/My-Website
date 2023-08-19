@@ -252,7 +252,7 @@ body {
   text-decoration: none;
   position: relative;
   left: 497px;
-  bottom: 11.5px;
+  bottom: 10px;
   margin-bottom: 18px;
   display: flex;
   flex-direction: column;
@@ -432,7 +432,6 @@ body.active ::-moz-placeholder {
     font-size: 1em;
     left: 250px;
     margin-bottom: 10px;
-    bottom: 10px;
   
   }
 
@@ -482,7 +481,7 @@ body.active ::-moz-placeholder {
     font-size: 0.9em;
     left: 148px;
     margin-bottom: 1px;
-    bottom: 18.5px;
+    bottom: 16px;
   
   }
 }
@@ -580,10 +579,17 @@ body.active ::-moz-placeholder {
     background-color: rgb(230, 230, 230);
   
   }
+
+  .titreRecherche {
+  
+    font-size: 1.2em;
+  
+  }
   
   .lienRecherche {
   
-    left: 52.5%;
+    font-size: 0.97em;
+    left: 49%;
     bottom: 13px;
     margin-bottom: 10px;
   
@@ -606,14 +612,14 @@ body.active ::-moz-placeholder {
 
   .titreRecherche {
   
-    font-size: 5vw;
+    font-size: 6vw;
   
   }
 
   .lienRecherche {
   
-    font-size: 4.5vw;
-    left: 45%;
+    font-size: 4.7vw;
+    left: 43%;
 
   }
 

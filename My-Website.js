@@ -136,8 +136,8 @@ const customSearches = {
   ],
 
   'réseau': [
-    { name: 'github', link: 'https://github.com/Vital-Vuillaume' },
-    { name: 'linkedin', link: 'https://www.linkedin.com/in/vital-vuillaume-bb7167273/' }
+    { name: 'Github', link: 'https://github.com/Vital-Vuillaume' },
+    { name: 'Linkedin', link: 'https://www.linkedin.com/in/vital-vuillaume-bb7167273/' }
   ]
 };
 
