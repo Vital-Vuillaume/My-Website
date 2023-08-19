@@ -95,7 +95,6 @@ btn2.onclick = function() {
   btn3.classList.remove('active');
 };
 
-
 btn3.onclick = function() {
   if (btn3.classList.contains('active')) {
     return;
@@ -194,7 +193,6 @@ function displaySearchResults(searchTerm) {
   }  
   localStorage.setItem('previousSearch', searchTerm);
 }
-
 
 //-----Sauvegarde de la recherhe-----\\
 
