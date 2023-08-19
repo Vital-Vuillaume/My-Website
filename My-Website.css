@@ -610,6 +610,12 @@ body.active ::-moz-placeholder {
 
 @media screen and (max-width: 350px) {
 
+  .body {
+
+    background-color: red;
+
+  }
+
   .titreRecherche {
   
     font-size: 6vw;
