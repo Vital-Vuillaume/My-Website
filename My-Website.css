@@ -595,6 +595,12 @@ body.active ::-moz-placeholder {
   
   }
 
+  .no-results {
+
+    font-size: 1.1em
+  
+  }
+
   body.active .lienRecherche {
   
     background-color: unset;
@@ -625,7 +631,7 @@ body.active ::-moz-placeholder {
 
   .no-results {
 
-    font-size: 4.5vw;
+    font-size: 4.3vw;
   
   }
 }
