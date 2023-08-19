@@ -588,8 +588,8 @@ body.active ::-moz-placeholder {
   
   .lienRecherche {
   
-    font-size: 0.97em;
-    left: 49%;
+    font-size: 0.95em;
+    left: 48.5%;
     bottom: 13px;
     margin-bottom: 10px;
   
@@ -610,22 +610,16 @@ body.active ::-moz-placeholder {
 
 @media screen and (max-width: 350px) {
 
-  .body {
-
-    background-color: red;
-
-  }
-
   .titreRecherche {
   
-    font-size: 60vw;
+    font-size: 5.5vw;
   
   }
 
   .lienRecherche {
   
-    font-size: 4.7vw;
-    left: 43%;
+    font-size: 4.5vw;
+    left: 47%;
 
   }
 
