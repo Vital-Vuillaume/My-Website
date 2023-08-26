@@ -1,10 +1,10 @@
 //------Pour que le site soit securise------\\
 
-if (window.location.protocol != "https:") {
-  window.location.protocol="https:";
-}
+// if (window.location.protocol != "https:") {
+//   window.location.protocol="https:";
+// }
 
-//------Element html------\\
+//------Elements html------\\
 
 const btn1 = document.getElementById('btn1');
 const btn2 = document.getElementById('btn2');
@@ -58,9 +58,20 @@ btn3.addEventListener('click', function() {
 
 //-----Barre de navigation qui s'agrandit-----\\
 
-btn.onclick = function ajouterClassNav() {
-   nav.classList.toggle("active"); 
-};
+function ajouterClassNav() {
+  nav.classList.toggle("active"); 
+}
+
+btn.onclick = ajouterClassNav;
+
+// Ajouter un gestionnaire d'événements au clic n'importe où sur la page
+window.addEventListener("click", function(event) {
+  if (!nav.contains(event.target) && !btn.contains(event.target)) {
+     nav.classList.remove("active");
+  }
+});
+
+
 
 //-----Afficher le bouton accueil par defaut-----\\
 
