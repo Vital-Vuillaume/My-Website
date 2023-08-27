@@ -38,7 +38,6 @@ function showSection(section) {
   section.style.display = 'block';
   window.scrollTo(0, 0);
 
-  localStorage.setItem('activeSection', section.id);
 }
 
 btn1.addEventListener('click', function() {
