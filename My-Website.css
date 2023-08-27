@@ -295,9 +295,30 @@ body {
 
   font-size: 1.2em;
   color: red;
-  margin-top: 20px;
+  margin-top: 15px;
 
 }
+
+.txtRecherche {
+
+  position: relative;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+}
+
+.imgRecherche {
+
+  background-image: url(recherche.png);
+  width: 100px;
+  height: 100px;
+  background-position: center;
+  background-size: cover;
+  
+} 
 
 /*---------------------------
 --------Page accueil---------

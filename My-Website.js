@@ -22,6 +22,7 @@ const btnDark = document.querySelector('.btnDark');
 const BtnEcran = document.querySelector('.btnEcran');
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
+const txtRecherche = document.querySelector('.txtRecherche');
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -141,18 +142,18 @@ const customSearches = {
 
 //-----Input qui recherche-----\\
 
-Recherche.addEventListener('input', showResults);
-
-function showResults() {
+Recherche.addEventListener('input', function() {
   const searchTerm = Recherche.value.trim().toLowerCase();
   localStorage.setItem('previousSearch', searchTerm);
 
   if (searchTerm === '') {
+    txtRecherche.style.display = 'flex';
     clearResults();
   } else {
+    txtRecherche.style.display = 'none';
     displaySearchResults(searchTerm);
   }
-}
+});
 
 function clearResults() {
   resultats.innerHTML = '';
@@ -199,7 +200,12 @@ window.addEventListener('load', function() {
   const previousSearch = localStorage.getItem('previousSearch');
   if (previousSearch) {
     Recherche.value = previousSearch;
-    showResults();
+    if (previousSearch === '') {
+      txtRecherche.style.display = 'flex';
+    } else {
+      txtRecherche.style.display = 'none';
+      displaySearchResults(previousSearch);
+    }
   }
 });
 
