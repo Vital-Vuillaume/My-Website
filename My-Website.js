@@ -159,6 +159,18 @@ function clearResults() {
   resultats.innerHTML = '';
 }
 
+//-----Input disparait au clic pour vu mobile-----\\
+
+if (window.innerWidth <= 425) {
+  Recherche.addEventListener('focus', function() {
+    nav.style.display = 'none';
+  });
+
+  Recherche.addEventListener('blur', function() {
+    nav.style.display = 'flex';
+  });
+}
+
 //-----Disposition des resultats-----\\
 
 function displaySearchResults(searchTerm) {
