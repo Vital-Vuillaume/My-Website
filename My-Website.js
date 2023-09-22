@@ -137,6 +137,16 @@ const customSearches = {
   'réseau': [
     { name: 'Github', link: 'https://github.com/Vital-Vuillaume' },
     { name: 'Linkedin', link: 'https://www.linkedin.com/in/vital-vuillaume-bb7167273/' }
+  ],
+
+  'organisation': [
+    { name: 'Asterjdm', link: 'https://github.com/asterjdm' },
+    { name: 'feur-company', link: 'https://github.com/Feur-company' },
+    { name: 'Pixel-Paradox', link: 'https://github.com/Pixel-Paradox' }
+  ],
+
+  'jeu': [
+    { name: 'Pixel-Adventure-Game', link: 'https://github.com/Pixel-Paradox/Pixel-Adventure-Game' }
   ]
 };
 
@@ -179,7 +189,9 @@ function displaySearchResults(searchTerm) {
   const categoryClasses = {
     'site': 'category',
     'collaboration': 'category',
-    'réseau': 'category'
+    'réseau': 'category',
+    'jeu': 'category',
+    'organisation': 'category'
   };
 
   for (const key in customSearches) {
