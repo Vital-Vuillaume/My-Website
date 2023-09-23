@@ -536,6 +536,12 @@ body.active ::-moz-placeholder {
 
   }
 
+  .nav.input {
+
+    display: none;
+
+  }
+
   .ligne {
 
     display: none

@@ -173,11 +173,11 @@ function clearResults() {
 
 if (window.innerWidth <= 425) {
   Recherche.addEventListener('focus', function() {
-    nav.style.display = 'none';
+    nav.classList.add('input');
   });
 
   Recherche.addEventListener('blur', function() {
-    nav.style.display = 'flex';
+    nav.classList.remove('input');
   });
 }
 
