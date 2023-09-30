@@ -330,15 +330,6 @@ body {
 -------Page parametres-------
 ---------------------------*/
 
-/*-----Bouton dark mode-----*/
-
-.btnDark {
-
-  width: 40px;
-  cursor: pointer;
-
-}
-
 /*-----Dark mode-----*/
 
 body.active {
@@ -518,6 +509,18 @@ body.active .shortcut {
 
 @media screen and (max-width: 900px) {
   
+  .ecran {
+
+    display: none;
+
+  }
+
+  .shortcutTitre {
+
+    display: none;
+
+  }
+
   .boxShortcut {
 
     display: none;
@@ -563,12 +566,6 @@ body.active .shortcut {
     width: 0%;
 
   }  
-
-  .btnEcran {
-
-    display: none;
-
-  }
 }
 
 @media screen and (max-width: 600px) {
