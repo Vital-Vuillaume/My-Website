@@ -20,7 +20,7 @@ body {
 
 .section1, .section2, .section3 {
 
-  margin: 0px 15px 15px 75px;
+  margin: 0px 10px 15px 75px;
   
 }
 
@@ -33,7 +33,7 @@ body {
   font-size: 2em;
   color: #6d47ff;
   margin-bottom: 10.5px;
-  width: 180px;
+  width: max-content;
 
 }
 
@@ -220,8 +220,8 @@ body {
   background-color: white;
   padding: 15px 15px 15px 22.5px;
   width: 750px;
-  margin-bottom: 17px;
-  margin-top: 17px;
+  margin-bottom: 18px;
+  margin-top: 18px;
   border-radius: 8px;
   border: 1px #6d47ff solid;
 
@@ -393,12 +393,90 @@ body.active ::-moz-placeholder {
 
 }
 
+body.active .btnParametres {
+
+  background-color: #292837;
+
+}
+
+body.active .shortcut {
+
+  background-color: #292837;
+
+}
+
 /*-----Bouton Ecran-----*/
 
-.btnEcran {
+.btnParametres {
 
-  width: 40px;
+  width: max-content;
+  padding: 4px;
+  position: relative;
+  top: 10px;
+  margin-bottom: 25px;
   cursor: pointer;
+  background-color: white;
+  border-radius: 5px;
+  border: 1px #6d47ff solid;
+
+}
+
+.imgShortcut {
+
+  width: 80px;
+  height: 80px;
+  display: block; 
+  margin: 0 auto;
+
+}
+
+.boxShortcut {
+
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  gap: 100px;
+  position: relative;
+  top: 100px;
+
+}
+
+.shortcut {
+
+  background-color: white;
+  padding: 40px 20px 40px 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 15px;
+  border: 1px #6d47ff solid;
+  width: 420px;
+  
+}
+
+.lienShortcut:hover {
+
+  color: red;
+
+}
+
+.lienShortcut {
+
+  color: #6d47ff;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  width: max-content;
+  display: block; 
+  margin: 0 auto;
+  transition: 2s;
+
+}
+
+.titreShortcut {
+
+  font-size: 2em;
+  font-weight: 600;
 
 }
 
@@ -424,10 +502,28 @@ body.active ::-moz-placeholder {
 
 }
 
+/*-----Vu pour petit ecran-----*/
+
+@media screen and (max-width: 1080px) {
+
+  .shortcut {
+
+    width: 330px;
+    
+  }
+  
+}
+
 /*-----Vu pour tablette-----*/
 
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 900px) {
   
+  .boxShortcut {
+
+    display: none;
+  
+  }
+
   .recherche {
   
     width: 300px;

@@ -1,8 +1,8 @@
 //------Pour que le site soit securise------\\
 
-if (window.location.protocol != "https:") {
+/*if (window.location.protocol != "https:") {
   window.location.protocol="https:";
-}
+}*/
 
 //------Element html------\\
 
@@ -18,8 +18,8 @@ const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
 const body = document.querySelector('body');
-const btnDark = document.querySelector('.btnDark');
-const BtnEcran = document.querySelector('.btnEcran');
+const btnDark = document.querySelector('.dark');
+const BtnEcran = document.querySelector('.ecran');
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
 const txtRecherche = document.querySelector('.txtRecherche');
