@@ -428,7 +428,7 @@ body.active .shortcut {
   text-align: center;
   gap: 100px;
   position: relative;
-  top: 100px;
+  margin-top: 25px;
 
 }
 
