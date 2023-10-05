@@ -1,8 +1,8 @@
 //------Pour que le site soit securise------\\
 
-/*if (window.location.protocol != "https:") {
+if (window.location.protocol != "https:") {
   window.location.protocol="https:";
-}*/
+}
 
 //------Element html------\\
 
@@ -27,7 +27,7 @@ const txtRecherche = document.querySelector('.txtRecherche');
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section3);
+  showSection(section1);
 });
 
 //-----Changement de page-----\\
