@@ -27,7 +27,7 @@ const txtRecherche = document.querySelector('.txtRecherche');
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section1);
+  showSection(section3);
 });
 
 //-----Changement de page-----\\
