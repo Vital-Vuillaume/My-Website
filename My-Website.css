@@ -411,6 +411,63 @@ body.active .shortcut {
 
 }
 
+.custom-menu {
+
+  display: none;
+  width: 280px;
+  box-shadow: 0 20px 30px #1111118c;
+  position: fixed;
+  border-radius: 1000%;
+  transition: 0.5s;
+  z-index: 100;
+  
+}
+
+.custom-menu .btnTest {
+
+  width: 100%;
+  background-color: #111;
+  color: #e7e7e7;
+  font-size: 0.9em;
+  padding: 8px 12px;
+  cursor: pointer;
+  z-index: 1000;
+  border-bottom: 1px solid rgb(78, 78, 78);
+
+}
+
+.custom-menu .btnTest:nth-child(1){
+
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  padding: 10px 12px 8px 12px;
+}
+
+.custom-menu .btnTest:nth-child(6){
+
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 8px 12px 10px 12px;
+  border-bottom: 0px;
+}
+
+.custom-menu .btnTest:hover {
+
+  background-color: #1d73cf;
+}
+
+.lienCodesource {
+
+  color: white;
+  text-decoration: none;
+
+}
+
+
+
+
+
+
 p::selection , img::selection, a::selection, div::selection {
 
   background-color: #6f4bff;

@@ -30,6 +30,95 @@ window.addEventListener('load', function() {
   showSection(section1);
 });
 
+
+
+
+
+
+
+
+const customMenu = document.querySelector(".custom-menu")
+
+document.addEventListener("contextmenu", toggleCustomMenu)
+document.addEventListener("click", toggleCustomMenu)
+
+function toggleCustomMenu(e){
+  if(e.type === "contextmenu"){
+    e.preventDefault()
+    
+    customMenu.style.display = "block"
+    customMenu.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`
+  }
+  else if(e.type === "click"){
+    customMenu.style.display = "none"
+  }
+}
+function toggleCustomMenu(e) {
+    if (e.type === "contextmenu") {
+      e.preventDefault();
+  
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+  
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+  
+      const menuMargin = 10;
+  
+      let menuX = mouseX;
+      let menuY = mouseY;
+  
+      if (menuX + customMenu.offsetWidth + menuMargin > windowWidth) {
+        menuX = windowWidth - customMenu.offsetWidth - menuMargin;
+      }
+
+      if (menuY + customMenu.offsetHeight + menuMargin > windowHeight) {
+        menuY = windowHeight - customMenu.offsetHeight - menuMargin;
+      }
+  
+      customMenu.style.display = "block";
+      customMenu.style.transform = `translate(${menuX}px, ${menuY}px)`;
+    } else if (e.type === "click") {
+      customMenu.style.display = "none";
+    }
+  }
+  
+
+const btnActualiser = document.querySelector(".btnTest:first-child")
+
+btnActualiser.addEventListener("click", () => {
+  location.reload()
+})
+
+const btnLienTheme = document.querySelector(".btnTest:nth-child(3)"); 
+
+btnLienTheme.onclick = function ajouterClassBody() {
+  toggleModeSombre();
+};
+
+const btnLienEcran = document.querySelector(".btnTest:nth-child(4)"); 
+
+btnLienEcran.onclick = function() {
+  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+    btnLienEcran.textContent = "Quitter le plein écran";
+    enterFullscreen();
+  } else {
+    exitFullscreen();
+    btnLienEcran.textContent = "Mettre le plein écran";
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
 //-----Changement de page-----\\
 
 function showSection(section) {
