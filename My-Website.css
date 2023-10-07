@@ -414,6 +414,7 @@ body.active .shortcut {
 p::selection , img::selection, a::selection, div::selection {
 
   background-color: #6f4bff;
+  color: white;
 
 }
 
