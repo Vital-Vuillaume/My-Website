@@ -21,10 +21,9 @@ body {
 .custom-menu {
 
   display: none;
-  width: 280px;
+  width: 283px;
   box-shadow: 0 20px 30px #1111118c;
   position: fixed;
-  border-radius: 1000%;
   transition: 0.5s;
   z-index: 100;
   
@@ -50,7 +49,7 @@ body {
   padding: 10px 12px 8px 12px;
 }
 
-.custom-menu .btnTest:nth-child(6){
+.custom-menu .btnTest:nth-child(7){
 
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -60,7 +59,7 @@ body {
 
 .custom-menu .btnTest:hover {
 
-  background-color: #1d73cf;
+  background-color: #6d47ff;
 }
 
 .lienMenu{
