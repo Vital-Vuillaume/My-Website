@@ -39,22 +39,24 @@ body {
   z-index: 1000;
   border-bottom: 1px solid rgb(78, 78, 78);
   box-shadow: 0 20px 30px #1111118c;
-
+  transition: 0.2s;
 }
 
-.custom-menu .btnTest:nth-child(1) {
+.custom-menu .premier {
 
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   padding: 10px 12px 8px 12px;
+
 }
 
-.custom-menu .btnTest:last-child {
+.custom-menu .dernier {
 
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   padding: 8px 12px 10px 12px;
   border-bottom: 0px;
+
 }
 
 .custom-menu .btnTest:hover {
@@ -66,6 +68,7 @@ body {
 
   color: white;
   text-decoration: none;
+  border-radius: 0px;
 
 }
 
