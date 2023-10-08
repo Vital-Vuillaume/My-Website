@@ -38,12 +38,12 @@ window.addEventListener('load', function() {
 
 //------Sauvgarde du Menu contextuel------\\
 
-let menuContextuelPersonnaliseActive = false;
+let menuContextuelPersonnaliseActive = true;
 
 menuContextuelPersonnaliseActive = localStorage.getItem('menuContextuelPersonnaliseActive') === 'true';
 
 if (menuContextuelPersonnaliseActive) {
-  customMenu.style.display = "none";
+  customMenu.style.display = "block";
 } else {
   customMenu.style.display = "none";
 }
