@@ -28,7 +28,7 @@ const customMenu = document.querySelector(".custom-menu");
 const btnActualiser = document.querySelector(".btnTest:first-child");
 const btnLienTheme = document.querySelector(".btnTest:nth-child(3)");
 const btnLienEcran = document.querySelector(".btnTest:nth-child(4)");
-const btnCustomMenu = document.querySelector(".btnTest:last-child");
+const btnCustomMenu = document.querySelector(".btnTest:nth-child(5)");
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -387,9 +387,9 @@ BtnEcran.onclick =  function() {
   }
 };
 
-//-----Bouton Ecrau-----\\
+//-----Bouton Menu contextuel-----\\
 
-btnMenuCustom.addEventListener("click", function() {
+btnMenuCustom.addEventListener("click", function test() {
   menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
   customMenu.style.display = menuContextuelPersonnaliseActive ? "block" : "none";
 
