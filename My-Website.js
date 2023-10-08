@@ -38,7 +38,7 @@ window.addEventListener('load', function() {
 
 //------Sauvgarde du Menu contextuel------\\
 
-let menuContextuelPersonnaliseActive = true;
+let menuContextuelPersonnaliseActive = false;
 
 menuContextuelPersonnaliseActive = localStorage.getItem('menuContextuelPersonnaliseActive') === 'true';
 
