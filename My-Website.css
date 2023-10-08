@@ -22,7 +22,6 @@ body {
 
   display: none;
   width: 283px;
-  box-shadow: 0 20px 30px #1111118c;
   position: fixed;
   transition: 0.5s;
   z-index: 100;
@@ -39,6 +38,7 @@ body {
   cursor: pointer;
   z-index: 1000;
   border-bottom: 1px solid rgb(78, 78, 78);
+  box-shadow: 0 20px 30px #1111118c;
 
 }
 
@@ -552,6 +552,12 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
     display: none;
 
+  }
+
+  .MenuCustom {
+
+    display: none;
+  
   }
 
   .shortcutTitre {

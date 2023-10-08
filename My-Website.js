@@ -19,6 +19,7 @@ const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
 const body = document.querySelector('body');
 const btnDark = document.querySelector('.dark');
+const btnMenuCustom = document.querySelector('.MenuCustom');
 const BtnEcran = document.querySelector('.ecran');
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
@@ -26,8 +27,7 @@ const txtRecherche = document.querySelector('.txtRecherche');
 const customMenu = document.querySelector(".custom-menu");
 const btnActualiser = document.querySelector(".btnTest:first-child");
 const btnLienTheme = document.querySelector(".btnTest:nth-child(3)");
-const btnLienEcran = document.querySelector(".btnTest:nth-child(4)");  
-
+const btnLienEcran = document.querySelector(".btnTest:nth-child(4)");
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -35,41 +35,55 @@ window.addEventListener('load', function() {
   showSection(section1);
 });
 
-//------Menu contextuel------\\
+//------Sauvgarde du Menu contextuel------\\
 
-document.addEventListener("contextmenu", toggleCustomMenu)
-document.addEventListener("click", toggleCustomMenu)
+let menuContextuelPersonnaliseActive = true;
+
+menuContextuelPersonnaliseActive = localStorage.getItem('menuContextuelPersonnaliseActive') === 'true';
+
+if (menuContextuelPersonnaliseActive) {
+  customMenu.style.display = "none";
+} else {
+  customMenu.style.display = "none";
+}
+
+//------Menu contextuel personnaliser------\\
+
+document.addEventListener("contextmenu", toggleCustomMenu);
+document.addEventListener("click", toggleCustomMenu);
 
 function toggleCustomMenu(e) {
-  if (e.type === "contextmenu") {
-    e.preventDefault();
+  if (menuContextuelPersonnaliseActive) {
+    if (e.type === "contextmenu") {
+      e.preventDefault();
+    
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+    
+      const windowWidth = window.innerWidth;
+      const windowHeight = window.innerHeight;
+    
+      const menuMargin = 10;
+    
+      let menuX = mouseX;
+      let menuY = mouseY;
+    
+      if (menuX + customMenu.offsetWidth + menuMargin > windowWidth) {
+        menuX = windowWidth - customMenu.offsetWidth - menuMargin;
+      }
   
-    const mouseX = e.clientX;
-    const mouseY = e.clientY;
-  
-    const windowWidth = window.innerWidth;
-    const windowHeight = window.innerHeight;
-  
-    const menuMargin = 10;
-  
-    let menuX = mouseX;
-    let menuY = mouseY;
-  
-    if (menuX + customMenu.offsetWidth + menuMargin > windowWidth) {
-      menuX = windowWidth - customMenu.offsetWidth - menuMargin;
+      if (menuY + customMenu.offsetHeight + menuMargin > windowHeight) {
+        menuY = windowHeight - customMenu.offsetHeight - menuMargin;
+      }
+    
+      customMenu.style.display = "block";
+      customMenu.style.transform = `translate(${menuX}px, ${menuY}px)`;
+    } else if (e.type === "click") {
+      customMenu.style.display = "none";
     }
-
-    if (menuY + customMenu.offsetHeight + menuMargin > windowHeight) {
-      menuY = windowHeight - customMenu.offsetHeight - menuMargin;
-    }
-  
-    customMenu.style.display = "block";
-    customMenu.style.transform = `translate(${menuX}px, ${menuY}px)`;
-  } else if (e.type === "click") {
-    customMenu.style.display = "none";
   }
 }
-  
+
 //------Menu contextuel Actualiser------\\
 
 btnActualiser.addEventListener("click", () => {
@@ -362,3 +376,22 @@ BtnEcran.onclick =  function() {
     exitFullscreen();
   }
 };
+
+//-----Bouton Menu contextuel-----\\
+
+btnMenuCustom.addEventListener("click", function() {
+  menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
+  customMenu.style.display = menuContextuelPersonnaliseActive ? "block" : "none";
+
+  localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
+});
+
+btnMenuCustom.addEventListener("mousedown", function(e) {
+  if (e.button === 2) {
+    e.preventDefault();
+    menuContextuelPersonnaliseActive = false;
+    customMenu.style.display = "none";
+
+    localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
+  }
+});
