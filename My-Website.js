@@ -38,23 +38,29 @@ window.addEventListener('load', function() {
 
 //------Sauvgarde du Menu contextuel------\\
 
-let menuContextuelPersonnaliseActive = true;
-
-menuContextuelPersonnaliseActive = localStorage.getItem('menuContextuelPersonnaliseActive') === 'true';
-
-if (menuContextuelPersonnaliseActive) {
-  customMenu.style.display = "block";
-} else {
-  customMenu.style.display = "none";
+function updateMenuContextuelLocalStorage() {
+  localStorage.setItem("menuContextuelPersonnaliseActive", menuContextuelPersonnaliseActive.toString());
 }
 
+window.addEventListener('load', function() {
+  const menuContextuelActiveFromStorage = localStorage.getItem('menuContextuelPersonnaliseActive');
+  if (menuContextuelActiveFromStorage) {
+    menuContextuelPersonnaliseActive = menuContextuelActiveFromStorage === "true";
+    if (!menuContextuelPersonnaliseActive) {
+      customMenu.style.display = "none";
+    }
+  }
+});
+
 //------Menu contextuel personnaliser------\\
+
+let menuContextuelPersonnaliseActive = true;
 
 document.addEventListener("contextmenu", toggleCustomMenu);
 document.addEventListener("click", toggleCustomMenu);
 
 function toggleCustomMenu(e) {
-  if (menuContextuelPersonnaliseActive) {
+  if (menuContextuelPersonnaliseActive === true) {
     if (e.type === "contextmenu") {
       e.preventDefault();
     
@@ -87,9 +93,9 @@ function toggleCustomMenu(e) {
 
 //------Menu contextuel Actualiser------\\
 
-btnActualiser.addEventListener("click", () => {
+btnActualiser.onclick = function() {
   location.reload()
-})
+}
 
 //------Menu contextuel Dark mode------\\
 
@@ -112,10 +118,10 @@ btnLienEcran.onclick = function() {
 //------Menu contextuel mettre le menu par défault------\\
 
 btnCustomMenu.onclick =  function() {
-  menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
-  customMenu.style.display = menuContextuelPersonnaliseActive ? "block" : "none";
+  menuContextuelPersonnaliseActive = false;
+  customMenu.style.display = "none";
 
-  localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
+  updateMenuContextuelLocalStorage();
 }
 
 //-----Changement de page-----\\
@@ -387,21 +393,14 @@ BtnEcran.onclick =  function() {
   }
 };
 
-//-----Bouton Menu contextuel-----\\
+//------Bouton Menu contextuel------\\
 
-btnMenuCustom.addEventListener("click", function test() {
+btnMenuCustom.onclick = function() {
   menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
-  customMenu.style.display = menuContextuelPersonnaliseActive ? "block" : "none";
-
-  localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
-});
-
-btnMenuCustom.addEventListener("mousedown", function(e) {
-  if (e.button === 2) {
-    e.preventDefault();
-    menuContextuelPersonnaliseActive = false;
+  if (menuContextuelPersonnaliseActive) {
+    customMenu.style.display = "block";
+  } else {
     customMenu.style.display = "none";
-
-    localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
   }
-});
+  updateMenuContextuelLocalStorage();
+};
