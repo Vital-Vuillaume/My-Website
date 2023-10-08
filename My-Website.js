@@ -28,6 +28,7 @@ const customMenu = document.querySelector(".custom-menu");
 const btnActualiser = document.querySelector(".btnTest:first-child");
 const btnLienTheme = document.querySelector(".btnTest:nth-child(3)");
 const btnLienEcran = document.querySelector(".btnTest:nth-child(4)");
+const btnCustomMenu = document.querySelector(".btnTest:last-child");
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -107,6 +108,15 @@ btnLienEcran.onclick = function() {
     btnLienEcran.textContent = "Mettre le plein écran";
   }
 };
+
+//------Menu contextuel mettre le menu par défault------\\
+
+btnCustomMenu.onclick =  function() {
+  menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
+  customMenu.style.display = menuContextuelPersonnaliseActive ? "block" : "none";
+
+  localStorage.setItem('menuContextuelPersonnaliseActive', menuContextuelPersonnaliseActive);
+}
 
 //-----Changement de page-----\\
 
@@ -377,7 +387,7 @@ BtnEcran.onclick =  function() {
   }
 };
 
-//-----Bouton Menu contextuel-----\\
+//-----Bouton Ecrau-----\\
 
 btnMenuCustom.addEventListener("click", function() {
   menuContextuelPersonnaliseActive = !menuContextuelPersonnaliseActive;
