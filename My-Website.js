@@ -21,6 +21,7 @@ const body = document.querySelector('body');
 const btnDark = document.querySelector('.dark');
 const btnMenuCustom = document.querySelector('.MenuCustom');
 const BtnEcran = document.querySelector('.ecran');
+const fenetre = document.querySelector('.fenetre');
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
 const txtRecherche = document.querySelector('.txtRecherche');
@@ -410,3 +411,23 @@ btnMenuCustom.onclick = function() {
   }
   updateMenuContextuelLocalStorage();
 };
+
+//------Bouton fenetre------\\
+
+function ouvrirPopup() {
+  const url = 'https://rmbi.ch/vital';
+  const nomFenetre = 'Vital-Website';
+  const largeurEcran = screen.width;
+  const hauteurEcran = screen.height;
+  const proprietes = `width=${largeurEcran},height=${hauteurEcran},top=0,left=0,toolbar=no,menubar=no,resizable=no`;
+
+  const nouvelleFenetre = window.open(url, nomFenetre, proprietes);
+
+  if (nouvelleFenetre === null) {
+    alert('La fenêtre pop-up a été bloquée par le navigateur. Veuillez autoriser les pop-ups pour ce site.');
+  }
+}
+
+fenetre.onclick = function() {
+  ouvrirPopup();
+}
