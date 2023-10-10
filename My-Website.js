@@ -70,7 +70,7 @@ function toggleCustomMenu(e) {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
     
-      const menuMargin = 10;
+      const menuMargin = 0;
     
       let menuX = mouseX;
       let menuY = mouseY;
@@ -106,12 +106,10 @@ btnLienTheme.onclick = function ajouterClassBody() {
 //------Menu contextuel Ecran------\\
 
 btnLienEcran.onclick = function() {
-  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
-    btnLienEcran.textContent = "Quitter le plein écran";
+  if (!pleinEcranActif) {
     enterFullscreen();
   } else {
     exitFullscreen();
-    btnLienEcran.textContent = "Mettre le plein écran";
   }
 };
 
@@ -357,6 +355,8 @@ if (modeSombreStocke === "true") {
 
 //-----Passer en mode plein ecran-----\\
 
+pleinEcranActif = false;
+
 function enterFullscreen() {
   if (document.documentElement.requestFullscreen) {
     document.documentElement.requestFullscreen();
@@ -367,7 +367,10 @@ function enterFullscreen() {
   } else if (document.documentElement.msRequestFullscreen) {
     document.documentElement.msRequestFullscreen();
   }
-};
+  
+  pleinEcranActif = true;
+  btnLienEcran.textContent = "Quitter le plein écran";
+}
 
 //-----Sortir du mode plein ecran-----\\
 
@@ -381,12 +384,15 @@ function exitFullscreen() {
   } else if (document.msExitFullscreen) {
     document.msExitFullscreen();
   }
-};
+
+  pleinEcranActif = false;
+  btnLienEcran.textContent = "Mettre en plein écran";
+}
 
 //-----Bouton Ecran-----\\
 
-BtnEcran.onclick =  function() {
-  if (!document.fullscreenElement && !document.mozFullScreenElement && !document.webkitFullscreenElement && !document.msFullscreenElement) {
+BtnEcran.onclick = function() {
+  if (!pleinEcranActif) {
     enterFullscreen();
   } else {
     exitFullscreen();

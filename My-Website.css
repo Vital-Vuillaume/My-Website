@@ -36,10 +36,9 @@ body {
   font-size: 0.9em;
   padding: 8px 12px;
   cursor: pointer;
-  z-index: 1000;
   border-bottom: 1px solid rgb(78, 78, 78);
   box-shadow: 0 20px 30px #1111118c;
-  transition: 0.2s;
+  transition: 0.15s;
 }
 
 .custom-menu .premier {
@@ -64,7 +63,7 @@ body {
   background-color: #6d47ff;
 }
 
-.lienMenu{
+.lienMenu {
 
   color: white;
   text-decoration: none;
@@ -74,10 +73,18 @@ body {
 
 /*-----Style de la selection----*/
 
-p::selection , img::selection, a::selection, div::selection {
+p::selection, a::selection, div::selection, input::selection {
 
   background-color: #6f4bff;
   color: white;
+
+}
+
+/*-----Pas selectione----*/
+
+img, .custom-menu {
+
+  user-select: none;
 
 }
 
@@ -551,28 +558,10 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 @media screen and (max-width: 900px) {
   
-  .ecran {
+  .btnTest, .ecran, .MenuCustom, .shortcutTitre, .boxShortcut, .lienRecherche::after, .lienRecherche::before, .lienRecherche:hover::after, .lienRecherche:hover::before, .lienShortcut:hover {
 
     display: none;
 
-  }
-
-  .MenuCustom {
-
-    display: none;
-  
-  }
-
-  .shortcutTitre {
-
-    display: none;
-
-  }
-
-  .boxShortcut {
-
-    display: none;
-  
   }
 
   .recherche {
@@ -602,19 +591,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     left: 250px;
     margin-bottom: 10px;
   
-  }
-
-  .lienRecherche::after, .lienRecherche::before {
-
-    display: none;
-
-  }
-  
-  .lienRecherche:hover::after, .lienRecherche:hover::before {
-
-    width: 0%;
-
-  }  
+  } 
 }
 
 @media screen and (max-width: 600px) {
