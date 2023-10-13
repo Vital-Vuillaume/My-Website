@@ -558,7 +558,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 @media screen and (max-width: 900px) {
   
-  .btnTest, .ecran, .MenuCustom, .fenetre, .shortcutTitre, .boxShortcut, .lienRecherche::after, .lienRecherche::before, .lienRecherche:hover::after, .lienRecherche:hover::before, .lienShortcut:hover {
+  .btnTest, .ecran, .MenuCustom, .fenetre, .shortcutTitre, .boxShortcut, .lienRecherche::after, .lienRecherche::before, .lienRecherche:hover::after, .lienRecherche:hover::before {
 
     display: none;
 

@@ -71,7 +71,7 @@ function toggleCustomMenu(e) {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
     
-      const menuMargin = 0;
+      const menuMargin = 11;
     
       let menuX = mouseX;
       let menuY = mouseY;
