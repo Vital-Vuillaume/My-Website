@@ -218,7 +218,8 @@ const customSearches = {
     { name: 'Uppercase-Converter', link: 'https://rmbi.ch/vital/uppercase-converter/' },
     { name: 'Time-Converter', link: 'https://rmbi.ch/vital/time-converter/' },
     { name: 'Text-Meter', link: 'https://rmbi.ch/vital/text-meter/' },
-    { name: 'Mon premier site', link: 'https://rmbi.ch/vital/mfsh/' }
+    { name: 'Mon premier site', link: 'https://rmbi.ch/vital/mfsh/' },
+    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/Pixel-Adventure-Game-Web/' }
   ],
 
   'collaboration': [
@@ -239,7 +240,8 @@ const customSearches = {
   ],
 
   'jeu': [
-    { name: 'Pixel-Adventure-Game', link: 'https://github.com/Pixel-Paradox/Pixel-Adventure-Game' }
+    { name: 'Pixel-Adventure-Game', link: 'https://github.com/Pixel-Paradox/Pixel-Adventure-Game' },
+    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/Pixel-Adventure-Game-Web/' }
   ]
 };
 
