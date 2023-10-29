@@ -219,7 +219,7 @@ const customSearches = {
     { name: 'Time-Converter', link: 'https://rmbi.ch/vital/time-converter/' },
     { name: 'Text-Meter', link: 'https://rmbi.ch/vital/text-meter/' },
     { name: 'Mon premier site', link: 'https://rmbi.ch/vital/mfsh/' },
-    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/Pixel-Adventure-Game-Web/' }
+    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/pagw/' }
   ],
 
   'collaboration': [
