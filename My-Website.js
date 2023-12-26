@@ -19,6 +19,7 @@ const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
 const body = document.querySelector('body');
 const btnDark = document.querySelector('.dark');
+const colorPicker = document.querySelector('.colorPicker');
 const btnMenuCustom = document.querySelector('.MenuCustom');
 const BtnEcran = document.querySelector('.ecran');
 const fenetre = document.querySelector('.fenetre');
@@ -149,6 +150,18 @@ btn3.addEventListener('click', function() {
   window.scrollTo(0, 0);
 });
 
+//-----Changement du titre quand ton n'est plus sur l'onglet-----\\
+
+let title = document.title;
+
+window.addEventListener("blur", () => {
+  document.title = "Vital-Website";
+});
+
+window.addEventListener("focus", () => {
+  document.title = title;
+});
+
 //-----Barre de navigation qui s'agrandit-----\\
 
 btn.onclick = function ajouterClassNav() {
@@ -241,7 +254,11 @@ const customSearches = {
 
   'jeu': [
     { name: 'Pixel-Adventure-Game', link: 'https://github.com/Pixel-Paradox/Pixel-Adventure-Game' },
-    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/Pixel-Adventure-Game-Web/' }
+    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/pagw/' }
+  ],
+
+  'application': [
+    { name: 'Color-Invertor', link: 'https://github.com/Vital-Vuillaume/Color-Invertor' }
   ]
 };
 
@@ -286,7 +303,8 @@ function displaySearchResults(searchTerm) {
     'collaboration': 'category',
     'réseau': 'category',
     'jeu': 'category',
-    'organisation': 'category'
+    'organisation': 'category',
+    'application': 'category'
   };
 
   for (const key in customSearches) {
@@ -433,3 +451,20 @@ function ouvrirPopup() {
 fenetre.onclick = function() {
   ouvrirPopup();
 }
+
+//------Bouton couleur------\\
+
+colorPicker.addEventListener('input', function(event) {
+    const selectedColor = event.target.value;
+    document.documentElement.style.setProperty('--couleur', selectedColor);
+    localStorage.setItem('selectedColor', selectedColor);
+});
+
+window.addEventListener('load', function() {
+    const savedColor = localStorage.getItem('selectedColor');
+    
+    if (savedColor) {
+        document.documentElement.style.setProperty('--couleur', savedColor);
+        colorPicker.value = savedColor;
+    }
+});

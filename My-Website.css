@@ -9,6 +9,16 @@
 
 }
 
+:root {
+
+  --couleur: #6d47ff;
+
+}
+
+.root {
+  color: var(--couleur);
+}
+
 body {
 
   background-color: rgb(230, 230, 230);
@@ -60,7 +70,7 @@ body {
 
 .custom-menu .btnTest:hover {
 
-  background-color: #6d47ff;
+  background-color: var(--couleur);
 }
 
 .lienMenu {
@@ -75,7 +85,7 @@ body {
 
 p::selection, a::selection, div::selection, input::selection {
 
-  background-color: #6f4bff;
+  background-color: var(--couleur);
   color: white;
 
 }
@@ -92,7 +102,7 @@ img, .custom-menu {
 
 .section1, .section2, .section3 {
 
-  margin: 0px 10px 15px 75px;
+  margin: 0px 10px 15px 80px;
   
 }
 
@@ -103,7 +113,7 @@ img, .custom-menu {
   position: relative;
   top: 5px;
   font-size: 2em;
-  color: #6d47ff;
+  color: var(--couleur);
   margin-bottom: 10.5px;
   width: max-content;
 
@@ -113,14 +123,16 @@ img, .custom-menu {
 
 .nav {
 
-  top: 0;
+  top: 0.5%;
+  left: 0.3%;
   position: fixed;
-  height: 100vh;
+  height: 99vh;
   width: 65px;
   background-color: white;
   transition: background-color 0s;
-  transition: width 1.3s;
+  transition: width 1.1s;
   overflow-x: hidden;
+  border-radius: 15px;
 
 }
 
@@ -218,7 +230,7 @@ img, .custom-menu {
   padding: 7px;
   cursor: pointer;
   border-radius: 10px;
-  transition: 0.5s;
+  transition: 1.1s;
 
 }
 
@@ -230,13 +242,13 @@ img, .custom-menu {
 
 .list:hover {
 
-  background-color: #6d47ff;
+  background-color: var(--couleur);
 
 }
 
 .list.active {
 
-  background-color: #6d47ff;
+  background-color: var(--couleur);
 
 }
 
@@ -281,7 +293,7 @@ img, .custom-menu {
   border-radius: 7px;
   font-size: 1.1em;
   padding: 15px;
-  border: 1px #6d47ff solid;
+  border: 1px var(--couleur) solid;
 
 }
 
@@ -294,7 +306,7 @@ img, .custom-menu {
   width: 750px;
   margin-top: 18px;
   border-radius: 13px;
-  border: 1px #6d47ff solid;
+  border: 1px var(--couleur) solid;
 
 }
 
@@ -304,7 +316,7 @@ img, .custom-menu {
 
   font-size: 1.5em;
   font-weight: 300;
-  background-color: #6d47ff;
+  background-color: var(--couleur);
   padding: 5px 10px 5px 10px;
   width: max-content;
   border-radius: 7px;
@@ -337,7 +349,7 @@ img, .custom-menu {
   bottom: 0;
   width: 0;
   height: 2px;
-  background-color: #6d47ff;
+  background-color: var(--couleur);
   transition: width 0.7s ease-in-out;
 
 }
@@ -449,7 +461,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   cursor: pointer;
   background-color: white;
   border-radius: 5px;
-  border: 1px #6d47ff solid;
+  border: 1px var(--couleur) solid;
 
 }
 
@@ -484,7 +496,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   flex-direction: column;
   gap: 30px;
   border-radius: 15px;
-  border: 1px #6d47ff solid;
+  border: 1px var(--couleur) solid;
   width: 380px;
   
 }
@@ -497,7 +509,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 .lienShortcut {
 
-  color: #6d47ff;
+  color: var(--couleur);
   font-size: 1em;
   letter-spacing: 0.5px;
   width: max-content;
@@ -530,7 +542,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 ::-webkit-scrollbar-thumb {
 
-  background-color: #6d47ff;
+  background-color: var(--couleur);
   border-radius: 6vh;
   height: 16.5vh; 
 
