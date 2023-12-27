@@ -553,9 +553,10 @@ reset.onclick = function() {
   btnPopup.addEventListener('click', btnPopupClickHandler);
 
   if (isPopupVisible === true) {
-    popup.style.display = "block";
+    popup.style.visibility = "visible";
+    popup.style.opacity = 1;
     body.style.overflow = "hidden";
-  }
+  };
 };
 
 function btnPopupClickHandler(event) {
@@ -564,23 +565,17 @@ function btnPopupClickHandler(event) {
   isPopupConfirmed = true;
 
   if (isPopupConfirmed === true) {
-    popup.style.display = "none";
+    popup.style.visibility = "hidden";
+    popup.style.opacity = 0;
     location.reload();
     localStorage.clear();
     isPopupConfirmed = false;
-  }
-}
-
-document.addEventListener('click', function(event) {
-  if (!popup.contains(event.target) && event.target !== btnPopup && event.target !== reset) {
-    popup.style.display = "none";
-    body.style.overflow = "auto";
-    isPopupVisible = false;
-  }
+  };
+};
   
-  if (event.target === annuler) {
-    popup.style.display = "none";
+annuler.onclick = function() {
+    popup.style.visibility = "hidden";
+    popup.style.opacity = 0;
     body.style.overflow = "auto";
     isPopupVisible = false;
-  }
-});
+};

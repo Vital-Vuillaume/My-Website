@@ -134,7 +134,7 @@ img, .custom-menu {
   transition: background-color 0s, width 1.1s;
   overflow-x: hidden;
   border-radius: 15px;
-  z-index: 2000;
+  z-index: 20000;
 }
 
 
@@ -495,11 +495,10 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 }
 
-
 .popup {
 
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(8px);
   z-index: 2000;
   width: max-content;
   padding: 30px;
@@ -509,7 +508,9 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   top: 50%;
   transform: translate(-42.5%, -50%);
   font-size: 1.4em;
-  display: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: 1s;
 
 }
 
@@ -519,7 +520,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   gap: 100px;
   position: absolute;
   left: 50%;
-  top: 100%;
+  top: 130%;
   transform: translate(-50%, -50%);
   width: 100%;
   height: max-content;
@@ -531,12 +532,13 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(25px);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
   border-radius: 20px;
   width: max-content;
   padding: 7px 17px;
   border: 1px solid var(--couleur);
-  transition: background-color 2s, backdrop-filter 2s, letter-spacing 1.7s;
+  transition: letter-spacing 1.2s;
   font-size: 0.8em;
   cursor: pointer;
 
@@ -544,8 +546,6 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 .btnPopup:hover {
   
-  background-color: rgba(133, 133, 133, 0.2);
-  backdrop-filter: blur(250px);
   letter-spacing: 7px;
 
 }
@@ -735,6 +735,12 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     transform: translate(-39%, -50%);
 
   }
+
+  .sectionBtn {
+
+    top: 140%;
+
+  }
 }
 
 /*-----Vu pour mobile-----*/
@@ -880,7 +886,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   .sectionBtn {
 
-    top: 110%;
+    top: 150%;
     gap: 80px;
 
   }
