@@ -484,7 +484,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   background-image: url(curseur.png);
   background-size: cover;
   background-position: center;
-  z-index: 2000;
+  z-index: 20000;
   display: none;
   
 }
@@ -492,6 +492,61 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 .curseur.active {
 
   background-image: url(pointer.png);
+
+}
+
+
+.popup {
+
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  z-index: 2000;
+  width: max-content;
+  padding: 30px;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-42.5%, -50%);
+  font-size: 1.4em;
+  display: none;
+
+}
+
+.sectionBtn {
+
+  display: flex;
+  gap: 100px;
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: max-content;
+  justify-content: center;
+
+}
+
+.btnPopup {
+
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+  width: max-content;
+  padding: 7px 17px;
+  border: 1px solid var(--couleur);
+  transition: background-color 2s, backdrop-filter 2s, letter-spacing 1.7s;
+  font-size: 0.8em;
+  cursor: pointer;
+
+}
+
+.btnPopup:hover {
+  
+  background-color: rgba(133, 133, 133, 0.2);
+  backdrop-filter: blur(250px);
+  letter-spacing: 7px;
 
 }
 
@@ -606,6 +661,12 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   }
 
+  .btnPopup:hover {
+
+    letter-spacing: normal;
+
+  }
+
   .recherche {
   
     width: 300px;
@@ -665,6 +726,14 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     margin-bottom: 10px;
     bottom: 12.5px;
   
+  }
+
+  .popup {
+
+    padding: 20px;
+    font-size: 1em;
+    transform: translate(-39%, -50%);
+
   }
 }
 
@@ -799,6 +868,21 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
     background: linear-gradient(0deg, rgba(36,34,49,1) 0%, rgba(36,34,49,0.1) 100%);
   
+  }
+
+  .popup {
+
+    transform: translate(-50%, -50%);
+    padding: 15px;
+    font-size: 4vw;
+
+  }
+
+  .sectionBtn {
+
+    top: 110%;
+    gap: 80px;
+
   }
 }
 

@@ -34,11 +34,14 @@ const fenetre = document.querySelector('.fenetre');
 const curseur = document.querySelector('.curseur');
 const curseurCustom = document.querySelector('.curseurCustom');
 const reset = document.querySelector('.reset');
+const popup = document.querySelector('.popup');
+const btnPopup = document.querySelector('.ok');
+const annuler = document.querySelector('.annuler');
 
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section1);
+  showSection(section3);
 });
 
 //------Sauvgarde du Menu contextuel------\\
@@ -540,7 +543,44 @@ function resetStyles() {
 
 //------Bouton reset------\\
 
+let isPopupVisible = false;
+let isPopupConfirmed = false;
+
 reset.onclick = function() {
-  location.reload()
-  localStorage.clear();
+  isPopupVisible = true;
+
+  btnPopup.removeEventListener('click', btnPopupClickHandler);
+  btnPopup.addEventListener('click', btnPopupClickHandler);
+
+  if (isPopupVisible === true) {
+    popup.style.display = "block";
+    body.style.overflow = "hidden";
+  }
+};
+
+function btnPopupClickHandler(event) {
+  event.stopPropagation();
+
+  isPopupConfirmed = true;
+
+  if (isPopupConfirmed === true) {
+    popup.style.display = "none";
+    location.reload();
+    localStorage.clear();
+    isPopupConfirmed = false;
+  }
 }
+
+document.addEventListener('click', function(event) {
+  if (!popup.contains(event.target) && event.target !== btnPopup && event.target !== reset) {
+    popup.style.display = "none";
+    body.style.overflow = "auto";
+    isPopupVisible = false;
+  }
+  
+  if (event.target === annuler) {
+    popup.style.display = "none";
+    body.style.overflow = "auto";
+    isPopupVisible = false;
+  }
+});
