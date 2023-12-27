@@ -41,7 +41,7 @@ const annuler = document.querySelector('.annuler');
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section3);
+  showSection(section1);
 });
 
 //------Sauvgarde du Menu contextuel------\\
