@@ -13,24 +13,27 @@ const section1 = document.getElementById('section1');
 const section2 = document.getElementById('section2');
 const section3 = document.getElementById('section3');
 const btn = document.querySelector(".btn");
-const nav = document.querySelector(".nav");
 const image1 = document.querySelector('#btn1 .img');
 const image2 = document.querySelector('#btn2 .img');
 const image3 = document.querySelector('#btn3 .img');
-const body = document.querySelector('body');
-const btnDark = document.querySelector('.dark');
-const colorPicker = document.querySelector('.colorPicker');
+const nav = document.querySelector(".nav");
 const btnMenuCustom = document.querySelector('.MenuCustom');
-const BtnEcran = document.querySelector('.ecran');
-const fenetre = document.querySelector('.fenetre');
+const customMenu = document.querySelector(".custom-menu");
+const btnActualiser = document.querySelector(".btnMenu:first-child");
+const btnLienTheme = document.querySelector(".btnMenu:nth-child(3)");
+const btnLienEcran = document.querySelector(".btnMenu:nth-child(4)");
+const btnCustomMenu = document.querySelector(".btnMenu:nth-child(5)");
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
 const txtRecherche = document.querySelector('.txtRecherche');
-const customMenu = document.querySelector(".custom-menu");
-const btnActualiser = document.querySelector(".btnTest:first-child");
-const btnLienTheme = document.querySelector(".btnTest:nth-child(3)");
-const btnLienEcran = document.querySelector(".btnTest:nth-child(4)");
-const btnCustomMenu = document.querySelector(".btnTest:nth-child(5)");
+const body = document.querySelector('body');
+const btnDark = document.querySelector('.dark');
+const colorPicker = document.querySelector('.colorPicker');
+const BtnEcran = document.querySelector('.ecran');
+const fenetre = document.querySelector('.fenetre');
+const curseur = document.querySelector('.curseur');
+const curseurCustom = document.querySelector('.curseurCustom');
+const reset = document.querySelector('.reset');
 
 //-----Afficher la section 1 par defaut----\\
 
@@ -468,3 +471,76 @@ window.addEventListener('load', function() {
         colorPicker.value = savedColor;
     }
 });
+
+//------Bouton curseur------\\
+
+document.addEventListener('DOMContentLoaded', function() {
+  if (localStorage.getItem('cursorCustomized') === 'true') {
+    curseur.style.display = "block";
+    applyCustomCursor();
+  }
+});
+
+function applyCustomCursor() {
+  body.style.cursor = "none";
+
+  const selectors = ['a', 'div', 'li', 'p'];
+  selectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(element => {
+      element.style.cursor = "none";
+    });
+  });
+
+  if (colorPicker) {
+    colorPicker.style.cursor = "none";
+  }
+
+  document.addEventListener('mousemove', function(e) {
+    const topPosition = e.pageY - 10;
+    const leftPosition = e.pageX - 10;
+    curseur.style.top = topPosition + "px";
+    curseur.style.left = leftPosition + "px";
+  });
+
+  document.addEventListener('click', function() {
+    curseur.classList.add("active");
+    setTimeout(function() {
+      curseur.classList.remove("active");
+    }, 500);
+  });
+}
+
+curseurCustom.addEventListener('click', function() {
+  if (curseur.style.display === "block") {
+    resetStyles();
+    curseur.style.display = "none";
+    localStorage.setItem('cursorCustomized', 'false');
+  } else {
+    curseur.style.display = "block";
+    applyCustomCursor();
+    localStorage.setItem('cursorCustomized', 'true');
+  }
+});
+
+function resetStyles() {
+  body.style.cursor = "default";
+  const selectors = ['a', 'div', 'li', 'p'];
+  selectors.forEach(selector => {
+    const elements = document.querySelectorAll(selector);
+    elements.forEach(element => {
+      element.style.cursor = "default";
+    });
+  });
+
+  if (colorPicker) {
+    colorPicker.style.cursor = "default";
+  }
+};
+
+//------Bouton reset------\\
+
+reset.onclick = function() {
+  location.reload()
+  localStorage.clear();
+}

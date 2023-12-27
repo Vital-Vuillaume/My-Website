@@ -16,7 +16,9 @@
 }
 
 .root {
+
   color: var(--couleur);
+
 }
 
 body {
@@ -38,7 +40,7 @@ body {
   
 }
 
-.custom-menu .btnTest {
+.custom-menu .btnMenu {
 
   width: 100%;
   background-color: #111;
@@ -68,7 +70,7 @@ body {
 
 }
 
-.custom-menu .btnTest:hover {
+.custom-menu .btnMenu:hover {
 
   background-color: var(--couleur);
 }
@@ -122,19 +124,19 @@ img, .custom-menu {
 /*-----Barre de navigation-----*/
 
 .nav {
-
-  top: 0.5%;
-  left: 0.3%;
+  top: 8px;
+  left: 8px;
   position: fixed;
-  height: 99vh;
+  transform: translateY(0);
+  height: calc(100vh - 15px);
   width: 65px;
   background-color: white;
-  transition: background-color 0s;
-  transition: width 1.1s;
+  transition: background-color 0s, width 1.1s;
   overflow-x: hidden;
   border-radius: 15px;
-
+  z-index: 2000;
 }
+
 
 .nav.active {
 
@@ -449,7 +451,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 }
 
-/*-----Bouton Ecran et Dark mode-----*/
+/*-----Bouton paramètre-----*/
 
 .btnParametres {
 
@@ -462,6 +464,34 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   background-color: white;
   border-radius: 5px;
   border: 1px var(--couleur) solid;
+
+}
+
+.colorPicker {
+
+  cursor: grab;
+  width: 40px;
+  height: 20px;
+
+}
+
+.curseur {
+
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+  background-image: url(curseur.png);
+  background-size: cover;
+  background-position: center;
+  z-index: 2000;
+  display: none;
+  
+}
+
+.curseur.active {
+
+  background-image: url(pointer.png);
 
 }
 
@@ -570,7 +600,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 @media screen and (max-width: 900px) {
   
-  .btnTest, .ecran, .MenuCustom, .fenetre, .shortcutTitre, .boxShortcut, .lienRecherche::after, .lienRecherche::before, .lienRecherche:hover::after, .lienRecherche:hover::before {
+  .btnMenu, .ecran, .curseurCustom, .MenuCustom, .fenetre, .shortcutTitre, .boxShortcut, .lienRecherche::after, .lienRecherche::before, .lienRecherche:hover::after, .lienRecherche:hover::before {
 
     display: none;
 
