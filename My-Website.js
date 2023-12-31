@@ -35,7 +35,7 @@ const curseur = document.querySelector('.curseur');
 const curseurCustom = document.querySelector('.curseurCustom');
 const reset = document.querySelector('.reset');
 const popup = document.querySelector('.popup');
-const btnPopup = document.querySelector('.ok');
+const btnPopup = document.querySelector('.valider');
 const annuler = document.querySelector('.annuler');
 
 //-----Afficher la section 1 par defaut----\\
@@ -78,7 +78,7 @@ function toggleCustomMenu(e) {
       const windowWidth = window.innerWidth;
       const windowHeight = window.innerHeight;
     
-      const menuMargin = 11;
+      const menuMargin = 0;
     
       let menuX = mouseX;
       let menuY = mouseY;
@@ -555,7 +555,7 @@ reset.onclick = function() {
   if (isPopupVisible === true) {
     popup.style.visibility = "visible";
     popup.style.opacity = 1;
-    body.style.overflow = "hidden";
+    section3.style.overflow = "hidden";
   };
 };
 
@@ -576,6 +576,6 @@ function btnPopupClickHandler(event) {
 annuler.onclick = function() {
     popup.style.visibility = "hidden";
     popup.style.opacity = 0;
-    body.style.overflow = "auto";
+    section3.style.overflow = "auto";
     isPopupVisible = false;
 };
