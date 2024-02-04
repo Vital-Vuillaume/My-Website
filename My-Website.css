@@ -310,6 +310,27 @@ img, .custom-menu {
   margin-top: 18px;
   border-radius: 13px;
   border: 1px var(--couleur) solid;
+  animation: slide linear;
+  animation-timeline: view();
+  animation-range-start: cover 0%;
+  animation-range-end: cover 30%;
+
+}
+
+.category:last-child {
+  margin-bottom: 15vh;
+}
+
+@keyframes slide {
+  
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 
 }
 
@@ -555,8 +576,8 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 .imgShortcut {
 
-  width: 170px;
-  height: 170px;
+  width: 140px;
+  height: 140px;
   display: block; 
   margin: 0 auto;
   position: relative;
@@ -653,7 +674,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   font-size: 1.8em;
   font-weight: 600;
   position: relative;
-  top: 50px;
+  top: 60px;
   transition: 1.8s;
 
 }

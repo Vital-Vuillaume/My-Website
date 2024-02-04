@@ -41,7 +41,7 @@ const annuler = document.querySelector('.annuler');
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section1);
+  showSection(section2);
 });
 
 //------Sauvgarde du Menu contextuel------\\
@@ -259,12 +259,18 @@ const customSearches = {
   ],
 
   'jeu': [
-    { name: 'Pixel-Adventure-Game', link: 'https://github.com/Pixel-Paradox/Pixel-Adventure-Game' },
-    { name: 'P-A-G-W', link: 'https://rmbi.ch/vital/pagw/' }
+    { name: 'P-A-G-W-D', link: 'https://rmbi.ch/vital/pagw/' },
+    { name: 'P-A-G-w-D-test', link: 'https://rmbi.ch/vital/pagw2/' }
   ],
 
   'application': [
     { name: 'Color-Invertor', link: 'https://github.com/Vital-Vuillaume/Color-Invertor' }
+  ],
+
+  'script': [
+    { name: 'Calculate-Average', link: 'https://github.com/Vital-Vuillaume/Calculate-Average' },
+    { name: 'Hidden-Slash', link: 'https://github.com/Vital-Vuillaume/Hidden-Slash' },
+    { name: 'The-Price-Is-High', link: 'https://github.com/Vital-Vuillaume/The-Price-Is-High' }
   ]
 };
 
@@ -310,7 +316,8 @@ function displaySearchResults(searchTerm) {
     'réseau': 'category',
     'jeu': 'category',
     'organisation': 'category',
-    'application': 'category'
+    'application': 'category',
+    'script': 'category'
   };
 
   for (const key in customSearches) {
