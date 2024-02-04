@@ -23,7 +23,7 @@
 
 body {
 
-  background-color: rgb(230, 230, 230);
+  background-color: rgb(210, 210, 210);
   min-height: 100vh;
 
 }
@@ -555,10 +555,13 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 .imgShortcut {
 
-  width: 67px;
-  height: 67px;
+  width: 170px;
+  height: 170px;
   display: block; 
   margin: 0 auto;
+  position: relative;
+  top: 60px;
+  transition: 1.8s
 
 }
 
@@ -576,15 +579,44 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 .shortcut {
 
   background-color: white;
-  padding: 40px 20px 40px 20px;
   display: flex;
   justify-content: center;
   flex-direction: column;
   gap: 30px;
   border-radius: 15px;
   border: 1px var(--couleur) solid;
-  width: 380px;
+  width: 360px;
+  height: 330px;
+  overflow: hidden;
   
+}
+
+.shortcut:hover .imgShortcut {
+
+  top: 0px;
+  width: 67px;
+  height: 67px;
+
+}
+
+.shortcut:hover .paraShortcut {
+
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.shortcut:hover .lienShortcut {
+
+  visibility: visible;
+  opacity: 1;
+
+}
+
+.shortcut:hover .titreShortcut {
+
+  top: 0px;
+
 }
 
 .lienShortcut:hover {
@@ -601,7 +633,18 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   width: max-content;
   display: block; 
   margin: 0 auto;
-  transition: 2s;
+  transition: 2.3s;
+  visibility: hidden;
+  opacity: 0;
+
+}
+
+.paraShortcut {
+
+  visibility: hidden;
+  opacity: 0;
+  transition: 2.3s;
+  padding: 0px 10px 0px 10px;
 
 }
 
@@ -609,6 +652,9 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   font-size: 1.8em;
   font-weight: 600;
+  position: relative;
+  top: 50px;
+  transition: 1.8s;
 
 }
 
@@ -815,6 +861,17 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   
     background-color: transparent;
   
+  }
+  
+  .img {
+    transition: 0.2s;
+  }
+
+  .img:active {
+
+    transform: scale(0.8);
+    transition: 0.2s;
+
   }
 
   .txt {
