@@ -314,7 +314,7 @@ img, .custom-menu {
   margin-top: 18px;
   border-radius: 13px;
   border: 1px var(--couleur) solid;
-  animation: slide 10s linear;
+  animation: slide linear;
   animation-timeline: view();
   animation-range-start: cover 0%;
   animation-range-end: cover 70%;
@@ -691,6 +691,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 ::-webkit-scrollbar {
 
   width: 0.5vw;
+  background-color: #292837;
 
 }
 
@@ -833,14 +834,13 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     top: unset;
     bottom: 0;
     height: 65px;
-    width: 100vw;
+    width: calc(100vw - 15px);
     backdrop-filter: blur(0px);
     display: flex;
     justify-content: center;
     gap: 20%;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 0, 0, 0) 100%);
     border-radius: unset;
-    background-color: red;
 
   }
 
@@ -956,7 +956,6 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   body.active .nav {
 
     background: linear-gradient(0deg, rgba(36,34,49,1) 0%, rgba(36,34,49,0.1) 100%);
-    background-color: red;
     backdrop-filter: blur(0px);
   
   }
