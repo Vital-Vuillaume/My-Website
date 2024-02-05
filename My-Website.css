@@ -23,7 +23,7 @@
 
 body {
 
-  background-color: rgb(210, 210, 210);
+  background-color: rgb(255,255,255);
   min-height: 100vh;
 
 }
@@ -275,6 +275,10 @@ img, .custom-menu {
 }
 
 /*---------------------------
+--------Page accueil---------
+---------------------------*/
+
+/*---------------------------
 -------Page recherche--------
 ---------------------------*/
 
@@ -310,24 +314,20 @@ img, .custom-menu {
   margin-top: 18px;
   border-radius: 13px;
   border: 1px var(--couleur) solid;
-  animation: slide linear;
+  animation: slide 10s linear;
   animation-timeline: view();
   animation-range-start: cover 0%;
-  animation-range-end: cover 30%;
+  animation-range-end: cover 70%;
 
-}
-
-.category:last-child {
-  margin-bottom: 15vh;
 }
 
 @keyframes slide {
   
-  from {
+  0% {
     transform: translateY(100%);
     opacity: 0;
   }
-  to {
+  20% {
     transform: translateY(0);
     opacity: 1;
   }
@@ -400,7 +400,7 @@ img, .custom-menu {
 
 .no-results {
 
-  font-size: 1.2em;
+  font-size: 1em;
   color: red;
   margin-top: 15px;
 
@@ -430,12 +430,6 @@ img, .custom-menu {
 } 
 
 /*---------------------------
---------Page accueil---------
----------------------------*/
-
-
-
-/*---------------------------
 -------Page parametres-------
 ---------------------------*/
 
@@ -443,14 +437,16 @@ img, .custom-menu {
 
 body.active {
 
-  background-color: #242231;
+  background: rgb(36,34,49);
+  background: linear-gradient(90deg, rgba(36,34,49,1) 0%, rgba(30,29,42,1) 100%);
   color: white;
 
 }
 
-body.active .nav, body.active .ligne, body.active .btn::before, body.active .recherche, body.active .category, body.active .lienRecherche, body.active .btnParametres, body.active .shortcut {
+body.active .nav, body.active .ligne, body.active .btn::before, body.active .recherche, body.active .category, body.active .btnParametres, body.active .shortcut {
 
-  background-color: #292837;
+  background-color: #29283763;
+  backdrop-filter: blur(10px);
   color: white;
 
 }
@@ -464,6 +460,12 @@ body.active .btn::before, body.active .btn::after, body.active .ligne {
 body.active .btn::after {
 
   box-shadow: 0 -9px 0 white;
+
+}
+
+body.active .lienRecherche {
+
+  color: white;
 
 }
 
@@ -554,7 +556,6 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   text-align: center;
   background-color: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(8px);
   z-index: 2000;
   border-radius: 20px;
   width: max-content;
@@ -606,8 +607,8 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   gap: 30px;
   border-radius: 15px;
   border: 1px var(--couleur) solid;
-  width: 360px;
-  height: 330px;
+  width: 330px;
+  height: 310px;
   overflow: hidden;
   
 }
@@ -833,10 +834,13 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     bottom: 0;
     height: 65px;
     width: 100vw;
+    backdrop-filter: blur(0px);
     display: flex;
     justify-content: center;
     gap: 20%;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 0, 0, 0) 100%);
+    border-radius: unset;
+    background-color: red;
 
   }
 
@@ -952,6 +956,8 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   body.active .nav {
 
     background: linear-gradient(0deg, rgba(36,34,49,1) 0%, rgba(36,34,49,0.1) 100%);
+    background-color: red;
+    backdrop-filter: blur(0px);
   
   }
 
