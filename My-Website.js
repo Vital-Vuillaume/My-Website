@@ -3,7 +3,6 @@
 if (window.location.protocol != "https:") {
   window.location.protocol="https:";
 }
-
 //------Element html------\\
 
 const btn1 = document.getElementById('btn1');
@@ -365,26 +364,32 @@ window.addEventListener('load', function() {
 
 //-----Dark mode-----\\
 
-let modeSombreActive = false;
-
-function toggleModeSombre() {
-  body.classList.toggle("active");
-  modeSombreActive = !modeSombreActive;
-  localStorage.setItem("modeSombre", modeSombreActive);
-};
-
 //-----Bouton dark mode-----\\
 
-btnDark.onclick = function ajouterClassBody() {
-  toggleModeSombre();
-};
+let isDarkMode = localStorage.getItem('isDarkMode') === 'true';
 
-//-----Sauvegarde dark mode-----\\
+function updateDarkMode() {
+  if (isDarkMode) {
+    const newBg = `#242231`;
+    const newColor = `#38374863`;
+    const newColor2 = `white`;
+    document.documentElement.style.setProperty('--bg', newBg);
+    document.documentElement.style.setProperty('--default', newColor);
+    document.documentElement.style.setProperty('--default2', newColor2);
+    body.classList.add("black")
+  } else {
+    document.documentElement.style.removeProperty('--bg');
+    document.documentElement.style.removeProperty('--default');
+    document.documentElement.style.removeProperty('--default2');
+    body.classList.remove("black")
+  }
+}
+updateDarkMode();
 
-const modeSombreStocke = localStorage.getItem("modeSombre");
-if (modeSombreStocke === "true") {
-  body.classList.add("active");
-  modeSombreActive = true;
+btnDark.onclick = function() {
+  isDarkMode = !isDarkMode;
+  localStorage.setItem('isDarkMode', isDarkMode);
+  updateDarkMode();
 };
 
 //-----Passer en mode plein ecran-----\\

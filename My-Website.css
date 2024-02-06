@@ -12,19 +12,17 @@
 :root {
 
   --couleur: #6d47ff;
-
-}
-
-.root {
-
-  color: var(--couleur);
+  --bg: rgb(230, 230, 230);
+  --default: rgba(189, 189, 189, 0.217);
+  --default2: black;
 
 }
 
 body {
 
-  background-color: rgb(255,255,255);
+  background-color: var(--bg);
   min-height: 100vh;
+  color: var(--default2);
 
 }
 
@@ -103,10 +101,20 @@ img, .custom-menu {
 
 /*-----Marges des pages----*/
 
-.section1, .section2, .section3 {
+.section1, .section3 {
 
-  margin: 0px 10px 15px 80px;
+  margin: 0px 10px 30px 90px;
+  position: relative;
+  top: 15px;
   
+}
+
+.section2 {
+
+  margin: 0px 10px 60px 90px;
+  position: relative;
+  top: 15px;
+
 }
 
 /*-----Titres tests-----*/
@@ -125,17 +133,20 @@ img, .custom-menu {
 /*-----Barre de navigation-----*/
 
 .nav {
-  top: 8px;
-  left: 8px;
+
+  top: 15px;
+  left: 15px;
   position: fixed;
   transform: translateY(0);
-  height: calc(100vh - 15px);
+  height: calc(100vh - 27.5px);
   width: 65px;
-  background-color: white;
+  background-color: var(--default);
   transition: background-color 0s, width 1.1s;
   overflow-x: hidden;
   border-radius: 15px;
   z-index: 2000;
+  backdrop-filter: blur(10px);
+
 }
 
 
@@ -150,7 +161,7 @@ img, .custom-menu {
 .ligne {
 
   width: 100%;
-  background-color: black;
+  background-color: var(--default2);
   position: absolute;
   left: 50%;
   top: 60px;
@@ -181,7 +192,7 @@ img, .custom-menu {
   transform: translate(-50%, -50%);
   width: 35px;
   height: 2px;
-  background-color: black;
+  background-color: var(--default2);
   transition: 0.7s;
 
 }
@@ -195,8 +206,8 @@ img, .custom-menu {
   transform: translate(-50%, -50%);
   width: 35px;
   height: 2px;
-  background-color: black;
-  box-shadow: 0 -9px 0 black;
+  background-color: var(--default2);
+  box-shadow: 0 -9px 0 var(--default2);
   transition: 0.7s;
 
 }
@@ -300,7 +311,14 @@ img, .custom-menu {
   border-radius: 7px;
   font-size: 1.1em;
   padding: 15px;
+  top: 65px;
+  position: fixed;
   border: 1px var(--couleur) solid;
+  background-color: var(--default);
+  color: var(--default2);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+
 
 }
 
@@ -308,29 +326,14 @@ img, .custom-menu {
 
 .category {
 
-  background-color: white;
+  background-color: var(--default);
   padding: 15px 15px 15px 22.5px;
   width: 750px;
   margin-top: 18px;
+  position: relative;
+  top: 35px;
   border-radius: 13px;
   border: 1px var(--couleur) solid;
-  animation: slide linear;
-  animation-timeline: view();
-  animation-range-start: cover 0%;
-  animation-range-end: cover 70%;
-
-}
-
-@keyframes slide {
-  
-  0% {
-    transform: translateY(100%);
-    opacity: 0;
-  }
-  20% {
-    transform: translateY(0);
-    opacity: 1;
-  }
 
 }
 
@@ -353,7 +356,7 @@ img, .custom-menu {
 .lienRecherche {
 
   font-size: 1.1em;
-  color: black;
+  color: var(--default2);
   width: max-content;
   padding: 5px 5px 5px 4px;
   text-decoration: none;
@@ -433,48 +436,6 @@ img, .custom-menu {
 -------Page parametres-------
 ---------------------------*/
 
-/*-----Dark mode-----*/
-
-body.active {
-
-  background: rgb(36,34,49);
-  background: linear-gradient(90deg, rgba(36,34,49,1) 0%, rgba(30,29,42,1) 100%);
-  color: white;
-
-}
-
-body.active .nav, body.active .ligne, body.active .btn::before, body.active .recherche, body.active .category, body.active .btnParametres, body.active .shortcut {
-
-  background-color: #29283763;
-  backdrop-filter: blur(10px);
-  color: white;
-
-}
-
-body.active .btn::before, body.active .btn::after, body.active .ligne {
-
-  background-color: white;
-
-}
-
-body.active .btn::after {
-
-  box-shadow: 0 -9px 0 white;
-
-}
-
-body.active .lienRecherche {
-
-  color: white;
-
-}
-
-body.active ::placeholder, body.active ::-moz-placeholder {
-
-  color: rgb(185, 185, 185);
-
-}
-
 /*-----Bouton paramètre-----*/
 
 .btnParametres {
@@ -485,7 +446,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   top: 10px;
   margin-bottom: 25px;
   cursor: pointer;
-  background-color: white;
+  background-color: var(--default);
   border-radius: 5px;
   border: 1px var(--couleur) solid;
 
@@ -600,7 +561,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 .shortcut {
 
-  background-color: white;
+  background-color: var(--default);
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -691,7 +652,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 ::-webkit-scrollbar {
 
   width: 0.5vw;
-  background-color: #292837;
+  background-color: var(--bg);
 
 }
 
@@ -815,13 +776,7 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
 /*-----Vu pour mobile-----*/
 
-@media screen and (max-width: 425px) {
-
-  body {
-
-    background-color: white;
-
-  }
+@media screen and (max-width: 435px) {
 
   .section1, .section2, .section3 {
 
@@ -834,9 +789,10 @@ body.active ::placeholder, body.active ::-moz-placeholder {
     top: unset;
     bottom: 0;
     height: 65px;
-    width: calc(100vw - 15px);
+    width: 100%;
     backdrop-filter: blur(0px);
     display: flex;
+    left: 0;
     justify-content: center;
     gap: 20%;
     background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255, 0, 0, 0) 100%);
@@ -913,17 +869,24 @@ body.active ::placeholder, body.active ::-moz-placeholder {
 
   .recherche {
   
-    width: 100%;
+    position: relative;
     transition: 0.9s;
-    background-color: rgb(230, 230, 230);
+    width: 100%;
+    top: 0;
     
   }
 
   .category {
   
     width: 100%;
-    background-color: rgb(230, 230, 230);
+    top: 0px;
   
+  }
+
+  .category:last-child {
+
+    margin-bottom: 80px;
+
   }
 
   .titreRecherche {
@@ -947,16 +910,9 @@ body.active ::placeholder, body.active ::-moz-placeholder {
   
   }
 
-  body.active .lienRecherche {
-  
-    background-color: unset;
-  
-  }
-
-  body.active .nav {
+  body.black .nav {
 
     background: linear-gradient(0deg, rgba(36,34,49,1) 0%, rgba(36,34,49,0.1) 100%);
-    backdrop-filter: blur(0px);
   
   }
 
