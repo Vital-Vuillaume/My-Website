@@ -324,7 +324,6 @@ img, .custom-menu {
   backdrop-filter: blur(10px);
   z-index: 2000;
 
-
 }
 
 /*-----Bloc des reponses-----*/
@@ -410,7 +409,7 @@ img, .custom-menu {
 
   font-size: 1em;
   color: red;
-  margin-top: 15px;
+  margin-top: 50px;
 
 }
 
@@ -897,7 +896,7 @@ img, .custom-menu {
 
   .category:last-child {
 
-    margin-bottom: 65px;
+    margin-bottom: 33px;
 
   }
 
@@ -918,7 +917,12 @@ img, .custom-menu {
 
   .no-results {
 
-    font-size: 1.1em
+    font-size: 1.1em;
+    margin-top: 25px;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: max-content;
   
   }
 
