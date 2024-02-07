@@ -3,6 +3,7 @@
 if (window.location.protocol != "https:") {
   window.location.protocol="https:";
 }
+
 //------Element html------\\
 
 const btn1 = document.getElementById('btn1');
@@ -107,7 +108,9 @@ btnActualiser.onclick = function() {
 //------Menu contextuel Dark mode------\\
 
 btnLienTheme.onclick = function ajouterClassBody() {
-  toggleModeSombre();
+  isDarkMode = !isDarkMode;
+  localStorage.setItem('isDarkMode', isDarkMode);
+  updateDarkMode();
 };
 
 //------Menu contextuel Ecran------\\
