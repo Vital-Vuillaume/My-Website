@@ -101,20 +101,12 @@ img, .custom-menu {
 
 /*-----Marges des pages----*/
 
-.section1, .section3 {
+.section1, .section2, .section3 {
 
   margin: 0px 10px 30px 90px;
   position: relative;
   top: 15px;
   
-}
-
-.section2 {
-
-  margin: 0px 10px 65px 90px;
-  position: relative;
-  top: 15px;
-
 }
 
 /*-----Titres tests-----*/
@@ -305,6 +297,8 @@ img, .custom-menu {
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
+  margin-top: 45px;
 
 }
 
@@ -335,7 +329,6 @@ img, .custom-menu {
   width: 750px;
   margin-top: 18px;
   position: relative;
-  top: 35px;
   border-radius: 13px;
   border: 1px var(--couleur) solid;
 
@@ -784,8 +777,8 @@ img, .custom-menu {
 
   .section1, .section2, .section3 {
 
-    margin: 0px 15px 62.5px 15px;
-    
+    margin: 0px 15px 0px 15px;
+
   }
 
   .nav {
@@ -855,7 +848,9 @@ img, .custom-menu {
   }
   
   .img {
+
     transition: 0.2s;
+
   }
 
   .img:active {
@@ -875,6 +870,7 @@ img, .custom-menu {
 
     display: block;
     overflow: auto;
+    margin-top: 0;
   
   }
 
@@ -896,7 +892,7 @@ img, .custom-menu {
 
   .category:last-child {
 
-    margin-bottom: 33px;
+    margin-bottom: 65px;
 
   }
 
