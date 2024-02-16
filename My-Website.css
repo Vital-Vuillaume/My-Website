@@ -402,7 +402,11 @@ img, .custom-menu {
 
   font-size: 1em;
   color: red;
-  margin-top: 55px;
+  margin-top: 35px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: max-content;
 
 }
 
@@ -667,17 +671,6 @@ img, .custom-menu {
 
 }
 
-/*-----Vu pour petit ecran-----*/
-
-@media screen and (max-width: 1080px) {
-
-  .shortcut {
-
-    width: 330px;
-    
-  }
-  
-}
 
 /*-----Vu pour tablette-----*/
 
@@ -856,7 +849,7 @@ img, .custom-menu {
   .img:active {
 
     transform: scale(0.8);
-    transition: 0.2s;
+
 
   }
 
@@ -913,12 +906,8 @@ img, .custom-menu {
 
   .no-results {
 
-    font-size: 1.1em;
+    font-size: 1em;
     margin-top: 25px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    width: max-content;
   
   }
 

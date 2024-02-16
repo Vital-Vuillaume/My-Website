@@ -23,6 +23,7 @@ const btnActualiser = document.querySelector(".btnMenu:first-child");
 const btnLienTheme = document.querySelector(".btnMenu:nth-child(3)");
 const btnLienEcran = document.querySelector(".btnMenu:nth-child(4)");
 const btnCustomMenu = document.querySelector(".btnMenu:nth-child(5)");
+const containerRecherche = document.querySelector('.containerRecherche');
 const Recherche = document.querySelector('.recherche');
 const resultats = document.querySelector('.resultats');
 const txtRecherche = document.querySelector('.txtRecherche');
@@ -341,7 +342,13 @@ function displaySearchResults(searchTerm) {
   }
   
   if (resultats.innerHTML === '') {
-    resultats.innerHTML = '<div class="no-results">Aucun résultat trouvé pour la recherche.</div>';
+    resultats.innerHTML = `<div class="no-results">Aucun résultat trouvé pour "${Recherche.value}".</div>`;
+    containerRecherche.style.overflow = "hidden";
+    containerRecherche.style.height = "200px";
+  }
+  else {
+    containerRecherche.style.overflow = "auto";
+    containerRecherche.style.height = "auto";
   }  
   localStorage.setItem('previousSearch', searchTerm);
 }
