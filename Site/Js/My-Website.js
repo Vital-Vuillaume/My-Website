@@ -1,8 +1,8 @@
 //------Pour que le site soit securise------\\
 
-if (window.location.protocol != "https:") {
+/*if (window.location.protocol != "https:") {
   window.location.protocol="https:";
-}
+}*/
 
 //------Element html------\\
 
@@ -42,7 +42,7 @@ const annuler = document.querySelector('.annuler');
 //-----Afficher la section 1 par defaut----\\
 
 window.addEventListener('load', function() {
-  showSection(section1);
+  showSection(section2);
 });
 
 //------Sauvgarde du Menu contextuel------\\
@@ -133,6 +133,27 @@ btnCustomMenu.onclick =  function() {
   updateMenuContextuelLocalStorage();
 }
 
+
+function scrollTop() {
+  const currentScroll = window.scrollY;
+  const duration = 500;
+  const startTime = performance.now();
+
+  function animateScroll(timestamp) {
+    const elapsedTime = timestamp - startTime;
+    const progress = Math.min(elapsedTime / duration, 1);
+    const newScroll = currentScroll * (1 - progress);
+
+    window.scrollTo(0, newScroll);
+
+    if (progress < 1) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
+  requestAnimationFrame(animateScroll);
+}
+
+
 //-----Changement de page-----\\
 
 function showSection(section) {
@@ -140,23 +161,23 @@ function showSection(section) {
   section2.style.display = 'none';
   section3.style.display = 'none';
   section.style.display = 'block';
-  window.scrollTo(0, 0);
+  scrollTop()
 
 }
 
 btn1.addEventListener('click', function() {
   showSection(section1);
-  window.scrollTo(0, 0);
+  scrollTop()
 });
 
 btn2.addEventListener('click', function() {
   showSection(section2);
-  window.scrollTo(0, 0);
+  scrollTop()
 });
 
 btn3.addEventListener('click', function() {
   showSection(section3);
-  window.scrollTo(0, 0);
+  scrollTop()
 });
 
 //-----Changement du titre quand ton n'est plus sur l'onglet-----\\
@@ -174,13 +195,13 @@ window.addEventListener("focus", () => {
 //-----Barre de navigation qui s'agrandit-----\\
 
 btn.onclick = function ajouterClassNav() {
-   nav.classList.toggle("active"); 
+  nav.classList.toggle("active"); 
 };
 
 //-----Afficher le bouton accueil par defaut-----\\
 
 btn1.classList.add('active');
-image1.src = 'accueil-active.png';
+image1.src = 'Site/Image/accueil-active.png';
 
 //-----Changement des boutons-----\\
 
@@ -189,11 +210,11 @@ btn1.onclick = function() {
     return;
   }
 
-  image1.src = 'accueil-active.png';
+  image1.src = 'Site/Image/accueil-active.png';
   btn1.classList.add('active');
-  image2.src = 'recherche.png';
+  image2.src = 'Site/Image/recherche.png';
   btn2.classList.remove('active');
-  image3.src = 'parametres.png';
+  image3.src = 'Site/Image/parametres.png';
   btn3.classList.remove('active');
 };
 
@@ -202,11 +223,11 @@ btn2.onclick = function() {
     return;
   }
 
-  image2.src = 'recherche-active.png';
+  image2.src = 'Site/Image/recherche-active.png';
   btn2.classList.add('active');
-  image1.src = 'accueil.png';
+  image1.src = 'Site/Image/accueil.png';
   btn1.classList.remove('active');
-  image3.src = 'parametres.png';
+  image3.src = 'Site/Image/parametres.png';
   btn3.classList.remove('active');
 };
 
@@ -215,11 +236,11 @@ btn3.onclick = function() {
     return;
   }
 
-  image3.src = 'parametres-active.png';
+  image3.src = 'Site/Image/parametres-active.png';
   btn3.classList.add('active');
-  image1.src = 'accueil.png';
+  image1.src = 'Site/Image/accueil.png';
   btn1.classList.remove('active');
-  image2.src = 'recherche.png';
+  image2.src = 'Site/Image/recherche.png';
   btn2.classList.remove('active');
 };
 
@@ -285,6 +306,7 @@ Recherche.addEventListener('input', function() {
 
   if (searchTerm === '') {
     txtRecherche.style.display = 'flex';
+    containerRecherche.style.height = "200px";
     clearResults();
   } else {
     txtRecherche.style.display = 'none';
@@ -342,11 +364,13 @@ function displaySearchResults(searchTerm) {
   }
   
   if (resultats.innerHTML === '') {
-    resultats.innerHTML = `<div class="no-results">Aucun résultat trouvé pour "${Recherche.value}".</div>`;
+    resultats.classList.add("no-results")
+    resultats.textContent = `Aucun résultat trouvé pour "${Recherche.value}"`;
     containerRecherche.style.overflow = "hidden";
     containerRecherche.style.height = "200px";
   }
   else {
+    resultats.classList.remove("no-results")
     containerRecherche.style.overflow = "auto";
     containerRecherche.style.height = "auto";
   }  

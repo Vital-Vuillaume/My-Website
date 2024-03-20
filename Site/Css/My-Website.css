@@ -298,7 +298,7 @@ img, .custom-menu {
   flex-direction: column;
   align-items: center;
   position: relative;
-  margin-top: 45px;
+  margin-top: 10px;
 
 }
 
@@ -310,13 +310,13 @@ img, .custom-menu {
   border-radius: 7px;
   font-size: 1.1em;
   padding: 15px;
-  top: 65px;
-  position: fixed;
+  top: 0px;
+  position: relative;
   border: 1px var(--couleur) solid;
   background-color: var(--default);
   color: var(--default2);
   backdrop-filter: blur(10px);
-  z-index: 2000;
+  z-index: 100;
 
 }
 
@@ -467,7 +467,7 @@ img, .custom-menu {
   width: 25px;
   height: 25px;
   pointer-events: none;
-  background-image: url(curseur.png);
+  background-image: url(/Site/Image/curseur.png);
   background-size: cover;
   background-position: center;
   z-index: 20000;
@@ -477,7 +477,7 @@ img, .custom-menu {
 
 .curseur.active {
 
-  background-image: url(pointer.png);
+  background-image: url(/Site/Image/pointer.png);
 
 }
 
@@ -869,9 +869,10 @@ img, .custom-menu {
 
   .recherche {
   
-    position: relative;
+    position: initial;
     transition: 0.9s;
     width: 100%;
+    transition: 0s;
     top: 0;
     
   }
