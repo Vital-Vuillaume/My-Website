@@ -299,6 +299,7 @@ img, .custom-menu {
   align-items: center;
   position: relative;
   margin-top: 10px;
+  height: 200px;
 
 }
 
@@ -402,7 +403,7 @@ img, .custom-menu {
 
   font-size: 1em;
   color: red;
-  margin-top: 35px;
+  margin-top: 60px;
   position: absolute;
   left: 50%;
   transform: translate(-50%,-50%);
@@ -415,11 +416,13 @@ img, .custom-menu {
 .txtRecherche {
 
   position: relative;
-  top: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 10px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -0%);
 
 }
 
@@ -882,6 +885,15 @@ img, .custom-menu {
     width: 100%;
     top: 0px;
   
+  }
+
+  .txtRecherche {
+
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+
   }
 
   .category:last-child {
