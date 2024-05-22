@@ -267,7 +267,6 @@ const customSearches = {
 
   'collaboration': [
     { name: 'Cesco', link: 'https://rmbi.ch/cesco/' },
-    { name: 'Cesco-Leak', link: 'https://github.com/Vital-Vuillaume/Interactive-Carousel-for-Cesco-Leak' },
     { name: 'Cosmos-Search', link: 'https://github.com/Vital-Vuillaume/Cosmos-Search' }
   ],
 
@@ -283,7 +282,7 @@ const customSearches = {
   ],
 
   'jeu': [
-    { name: 'P-A-G-W-D', link: 'https://rmbi.ch/vital/pagw/' },
+    { name: 'P-A-G-W-D', link: 'https://rmbi.ch/vital/pad/' },
     { name: 'P-A-G-w-D-test', link: 'https://rmbi.ch/vital/pagw2/' }
   ],
 
