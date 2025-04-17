@@ -1,3 +1,7 @@
+if (window.location.protocol != "https:") {
+    window.location.protocol="https:";
+}
+
 const production = document.querySelector(".production");
 
 const btnNavigations = document.querySelectorAll(".navigation");
